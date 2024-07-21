@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cstdlib>
 #include "biblioteca.h"
 #include "estructuras.h"
 
@@ -13,6 +14,22 @@ struct Registro{
 	string SEXO;
 	string TELEFONO;
 };
+
+struct Prestamo {
+    string nombre_libro;
+    string fecha_entrega;
+    string fecha_devolucion;
+};
+
+struct Book {
+    long long id; 
+    string nombre;
+    string autor;
+    int anio;
+    int paginas;
+};
+
+
 
 Registro registrar[1000];
 int cantidad_de_usuarios;
@@ -55,6 +72,7 @@ void Registrar(Registro REG[],int &cant_usu){
 }
 
 
+
 //Imprime el logo de BIBLIOTECA
 void Logo(){
 	cout<<"\t\t\t\t\t----------------------------------------------------------------------------"<<endl;
@@ -89,7 +107,7 @@ void Menu_Principal(){
 				Menu_Usuario();
 				
 			}else if(resp==2){
-				//Menu_Administrador();
+				//Menu_Administrador()
 			}
 		}while(resp!=0);
 }
@@ -124,7 +142,9 @@ void Menu_Usuario(){
 			
 		}
 		if(resp==3){
-			
+			long long buscarID; 
+			cin>>buscarID; 
+            prestamoLibro(libros, cantidadLibros, buscarID, prestamos, indicePrestamos);
 		}
 		
 	}while(resp!=0);
