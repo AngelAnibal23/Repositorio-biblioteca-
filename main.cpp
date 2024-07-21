@@ -1,12 +1,17 @@
 #include <iostream>
+#include "biblioteca.h"
+#include "estructuras.h"
+using namespace std;
+//Variables Globales:
+
 
 int main() {
 	
-	Menu_Usuario(); 
+	int cantidad_de_usarios=0;
 		
-	//comprobando cambios que se dan en las ramas
-	//mensajes
-	//test
+
+	Menu_Principal();
+	
 	
     return 0;
 }

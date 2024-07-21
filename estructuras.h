@@ -1,0 +1,8 @@
+#ifndef BIBLIOTECA_H
+#define BIBLIOTECA_H
+
+//ESTRUCTURA DE DATOS PERSONALES
+
+
+
+#endif
