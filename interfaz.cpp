@@ -3,6 +3,7 @@
 #include "estructuras.h"
 
 using namespace std;
+//ESTRUCTURA DE DATOS PERSONALES
 struct Registro{
 	string NOMBRE;
 	string DNI;
@@ -12,6 +13,7 @@ struct Registro{
 	string SEXO;
 	string TELEFONO;
 };
+
 Registro registrar[1000];
 int cantidad_de_usuarios;
 //FUNCION DE REGISTRAR
@@ -106,6 +108,8 @@ void Menu_Usuario(){
 			cout<<endl<<"\t\t\t\t\t\t|\t\t1.- Registrarse.             \t\t|"<<endl;
 			cout<<"\t\t\t\t\t\t|\t\t                              \t\t|";
 			cout<<endl<<"\t\t\t\t\t\t|\t\t2.- Mostrar Inventario.      \t\t|"<<endl;
+			cout<<"\t\t\t\t\t\t|\t\t                              \t\t|";
+			cout<<endl<<"\t\t\t\t\t\t|\t\t3.- Prestarse un libro.      \t\t|"<<endl;
 			cout<<"\t\t\t\t\t\t|\t\t                              \t\t|";
 			cout<<endl<<"\t\t\t\t\t\t|\t\t0.- Volver al menu principal.\t\t|"<<endl;
 			cout<<"\t\t\t\t\t\t|\t\t                              \t\t|";
