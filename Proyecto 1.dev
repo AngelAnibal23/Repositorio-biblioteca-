@@ -29,7 +29,7 @@ IncludeVersionInfo=0
 SupportXPThemes=0
 CompilerSet=0
 CompilerSettings=
-UnitCount=5
+UnitCount=6
 
 [VersionInfo]
 Major=1
@@ -71,7 +71,7 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit3]
-FileName=interfaz.cpp
+FileName=estructuras.h
 Folder=
 Compile=1
 Link=1
@@ -81,7 +81,7 @@ BuildCmd=
 CompileCpp=1
 
 [Unit4]
-FileName=estructuras.h
+FileName=registrar.cpp
 CompileCpp=1
 Folder=
 Compile=1
@@ -91,7 +91,17 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit5]
-FileName=registrar.cpp
+FileName=interfaz.cpp
+CompileCpp=1
+Folder=
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit6]
+FileName=libro1.h
 CompileCpp=1
 Folder=
 Compile=1
