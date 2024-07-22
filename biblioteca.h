@@ -4,6 +4,6 @@
 void Menu_Principal();
 void Menu_Usuario();
 void Logo();
-void Registrar(Registro REG[], int &cant_usu); 
+//void Registrar(Registro REG[], int &cant_usu); 
  
 #endif
