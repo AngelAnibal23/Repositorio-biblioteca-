@@ -9,70 +9,16 @@
 
 using namespace std;
 
+Book libro[15]; 
+Prestamo prest[50]; 
+Registro registrar[1000];
+int cantidad_de_usuarios;
+
 int tiempo;
 const int cantidadLibros = 15;
 const int cantidadPrestamos = 50;
 
-//ESTRUCTURA DE DATOS PERSONALES
-struct comunicacion{
-    string Autor1;
-    int Anio1;
-    int paginas1;
-    string Nombre1;
-    long long ID1;
-};
-struct matematica{
-	string Autor2;
-	int Anio2;
-	int paginas2;
-	string Nombre2;
-	long long ID2;
-};
-struct programacion{
-	string Autor3;
-	int Anio3;
-	int paginas3;
-	string Nombre3;
-	long long ID3;
-};
-struct quimica{
-	string Autor4;
-	int Anio4;
-	int paginas4;
-	string Nombre4;
-	long long ID4;
-};
-struct historia{
-	string Autor5;
-	int Anio5;
-	int paginas5;
-	string Nombre5;
-	long long ID5;
-};
 
-struct Registro{
-	string NOMBRE;
-	string DNI;
-	string CODIGO;
-	string EDAD;
-	string EMAIL;
-	string SEXO;
-	string TELEFONO;
-};
-
-struct Prestamo {
-    string nombre_libro;
-    string fecha_entrega;
-    string fecha_devolucion;
-};
-
-struct Book {
-    long long id; 
-    string nombre;
-    string autor;
-    int anio;
-    int paginas;
-};
 
 //funciones para que funcione el menu 3 
 
@@ -252,6 +198,7 @@ void menuPrestamos(Book libros[]){
 
         switch (opcion) {
             case 1: {
+            	Menu_Mostrar();
                 cout << "Digite el ID del libro: ";
 
                 while (true) {
@@ -312,10 +259,7 @@ void menuPrestamos(Book libros[]){
     };
 
 
-Book libro[15]; 
-Prestamo prest[50]; 
-Registro registrar[1000];
-int cantidad_de_usuarios;
+
 //FUNCION DE REGISTRAR
 void Registrar(Registro REG[],int &cant_usu){
 	Logo();
@@ -394,6 +338,17 @@ void Menu_Principal(){
 			}
 		}while(resp!=0);
 }
+//MENU MOSTRAR
+void Menu_Mostrar(){
+			
+	int numcateg;
+	cout<<"ESCRIBE EL NUMERO DE LA CATEGORIA"<<endl<<"1. Comunicacion     2.-matematica     3.-programacion     4.-quimica     5.-historia"<<endl;
+	cin>>numcateg;
+	mostrar(numcateg);
+	cout<<endl;
+	system("PAUSE");
+}
+	        
 
 //INGRESA AL MENU DE USUARIO
 void Menu_Usuario(){
@@ -422,13 +377,8 @@ void Menu_Usuario(){
 			Registrar(registrar,cantidad_de_usuarios);
 		}
 		if(resp==2){
-			int numcateg;
-	        cout<<"ESCRIBE EL NUMERO DE LA CATEGORIA"<<endl<<"1. Comunicacion     2.-matematica     3.-programacion     4.-quimica     5.-historia"<<endl;
-	        cin>>numcateg;
-	        mostrar(numcateg);
-	        cout<<endl;
-	        system("PAUSE");
-	        system("cls");
+			Menu_Mostrar();
+			system("cls");
 	    }
 		if(resp==3){
 	       menuPrestamos(libros); 
