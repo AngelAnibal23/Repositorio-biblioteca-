@@ -55,17 +55,18 @@ void registrarPrestamo(Prestamo prestamos[], int& indice, const Book& libro, int
         prestamos[indice] = prestamo;
         indice++;
     } else {
-        cout << "El historial de prestamos esta lleno." << endl;
+        cout << "\t\t\t\t\t\t\tEl historial de prestamos esta lleno." << endl;
     }
 }
 
 void prestamoLibro(Book libros[], int cantidad, long long buscarID, Prestamo prestamos[], int& indicePrestamos) {
-    bool confirmacion = false;
-
+    int confirmacion = 0;
+	
     for (int i = 0; i < cantidad; ++i) {
+    	
         if (libros[i].id == buscarID) {
-            cout << "Libro: " << libros[i].nombre << endl;
-            cout << "Digite los dias de adquisicion (maximo 5 dias): ";
+            cout << "\t\t\t\t\t\t\tLibro: " << libros[i].nombre << endl;
+            cout << "\t\t\t\t\t\t\tDigite los dias de adquisicion (maximo 5 dias): ";
 
             while (true) {
                 cin >> tiempo;
@@ -74,7 +75,7 @@ void prestamoLibro(Book libros[], int cantidad, long long buscarID, Prestamo pre
                 if (cin.fail() || tiempo < 1 || tiempo > 5) {
                     cin.clear(); // Limpiar el estado de error de cin
                     cin.ignore(10000, '\n'); // Ignorar la entrada incorrecta
-                    cout << "La cantidad de dias debe estar entre 1 y 5. Intente de nuevo: ";
+                    cout << "\t\t\t\t\t\t\tLa cantidad de dias debe estar entre 1 y 5. Intente de nuevo: ";
                 } else {
                     break; // Salir del bucle si la entrada es válida
                 }
@@ -82,29 +83,34 @@ void prestamoLibro(Book libros[], int cantidad, long long buscarID, Prestamo pre
 
             string fechaHora = obtenerFechaHoraActual();
             string fechaDevolucion = obtenerFechaDevolucion(tiempo);
-            cout << "El libro se entrego en la fecha: " << endl << fechaHora << endl;
-            cout << "Se espera que sea devuelto antes de: " << endl << fechaDevolucion << endl;
+            cout << "\t\t\t\t\t\t\tEl libro se entrego en la fecha: " << endl << fechaHora << endl;
+            cout << "\t\t\t\t\t\t\tSe espera que sea devuelto antes de: " << endl << fechaDevolucion << endl;
 
             registrarPrestamo(prestamos, indicePrestamos, libros[i], tiempo);
 
-            confirmacion = true;
+            confirmacion = 1;
             break;
         }
     }
 
-    if (!confirmacion) {
-        cout << "\nEl ID ingresado no corresponde a ningun libro." << endl;
+    if (confirmacion==0) {
+        cout << "\n\t\t\t\t\t\t\tEl ID ingresado no corresponde a ningun libro." << endl;
     }
+    system("cls");
 }
 
 void mostrarHistorial(const Prestamo prestamos[], int cantidad) {
-    cout << "\nHistorial de Prestamos:\n";
+	Logo();
+    cout << "\n\t\t\t\t\t\t\tHistorial de Prestamos:\n";
     for (int i = 0; i < cantidad; ++i) {
-        cout << "Libro: " << prestamos[i].nombre_libro << endl;
-        cout << "Fecha de Prestamo: " << prestamos[i].fecha_entrega << endl;
-        cout << "Fecha de Devolucion: " << prestamos[i].fecha_devolucion << endl;
-        cout << "--------------------------\n";
+        cout << "\t\t\t\t\t\t\tLibro: " << prestamos[i].nombre_libro << endl;
+        cout << "\t\t\t\t\t\t\tFecha de Prestamo: " << prestamos[i].fecha_entrega << endl;
+        cout << "\t\t\t\t\t\t\tFecha de Devolucion: " << prestamos[i].fecha_devolucion << endl;
+        cout << "\t\t\t\t\t\t\t--------------------------\n";
     }
+    cout<<endl;
+    system("PAUSE");
+    system("cls");
 }
 
 comunicacion comu [10] = {
@@ -134,39 +140,48 @@ historia hist [10] = {
 };
 
 void mostrar(int numcateg){
-	if(numcateg==1){
-		for(int a=0;a<10;a++){
-			if(comu[a].ID1!=0){
-				cout<<comu[a].ID1<<"   "<<comu[a].Autor1<<"   "<<comu[a].Anio1<<"   pag: "<<comu[a].paginas1<<"   "<<comu[a].Nombre1<<endl;
-			}
-		}
-	}else if(numcateg==2){
-		for(int a=0;a<10;a++){
-			if(mate[a].ID2!=0){
-				cout<<mate[a].ID2<<"   "<<mate[a].Autor2<<"   "<<mate[a].Anio2<<"   pag: "<<mate[a].paginas2<<"   "<<mate[a].Nombre2<<endl;
-			}
-		}
-	}else if(numcateg==3){
-		for(int a=0;a<10;a++){
-			if(progr[a].ID3!=0){
-				cout<<progr[a].ID3<<"   "<<progr[a].Autor3<<"   "<<progr[a].Anio3<<"   pag: "<<progr[a].paginas3<<"   "<<progr[a].Nombre3<<endl;
-			}
-		}
-	}else if(numcateg==4){
-		for(int a=0;a<10;a++){
-			if(quimi[a].ID4!=0){
-				cout<<quimi[a].ID4<<"   "<<quimi[a].Autor4<<"   "<<quimi[a].Anio4<<"   pag: "<<quimi[a].paginas4<<"   "<<quimi[a].Nombre4<<endl;
-			}
-		}
-	}else if(numcateg==5){
-		for(int a=0;a<10;a++){
-			if(hist[a].ID5!=0){
-				cout<<hist[a].ID5<<"   "<<hist[a].Autor5<<"   "<<hist[a].Anio5<<"   pag: "<<hist[a].paginas5<<"   "<<hist[a].Nombre5<<endl;
-			}
-		}
+	Logo();
+	if(numcateg == 1) {
+    	for(int a = 0; a < 10; a++) {
+        	if(comu[a].ID1 != 0) {
+         	   cout << "\t\t\t\t\tL" << a + 1 << "    ID: " << comu[a].ID1 << "   NOMBRE: " << comu[a].Nombre1 << endl << "\t\t\t\t\t\t\t         AUTOR: " ;
+          	  cout << comu[a].Autor1 << comu[a].Anio1 << "   PAG: " << comu[a].paginas1<< endl;              
+     		   }
+   		 }
+	} else if(numcateg == 2) {
+    	for(int a = 0; a < 10; a++) {
+       	 if(mate[a].ID2 != 0) {
+          	  cout << "\t\t\t\t\tL" << a + 1 << "    ID: " << mate[a].ID2 << "   NOMBRE: " << mate[a].Nombre2 << endl << "\t\t\t\t\t\t\t         AUTOR: ";
+          	  cout << mate[a].Autor2 << mate[a].Anio2 << "   PAG: " << mate[a].paginas2<<  endl;         
+       		 }
+    	}
+	} else if(numcateg == 3) {
+   	 	for(int a = 0; a < 10; a++) {
+        	if(progr[a].ID3 != 0) {
+            	cout << "\t\t\t\t\tL" << a + 1  << "    ID: " << progr[a].ID3  << "   NOMBRE: " << progr[a].Nombre3;
+            	cout<< endl << "\t\t\t\t\t\t\t         AUTOR: " << progr[a].Autor3 << progr[a].Anio3<< "   PAG: " << progr[a].paginas3<< endl;           
+      		  }
+    	}
+	} else if(numcateg == 4) {
+    	for(int a = 0; a < 10; a++) {
+        	if(quimi[a].ID4 != 0) {
+          	  	cout << "\t\t\t\t\tL" << a + 1  << "    ID: " << quimi[a].ID4 << "   NOMBRE: " << quimi[a].Nombre4 << endl << "\t\t\t\t\t\t\t         AUTOR: ";
+            	cout << quimi[a].Autor4 << quimi[a].Anio4    << "   PAG: " << quimi[a].paginas4 << endl;        
+        	}
+    	}
+	} else if(numcateg == 5) {
+    	for(int a = 0; a < 10; a++) {
+        	if(hist[a].ID5 != 0) {
+            	cout << "\t\t\t\t\tL" << a + 1 << "    ID: " << hist[a].ID5 << "   NOMBRE: " << hist[a].Nombre5 << endl << "\t\t\t\t\t\t\t         AUTOR: " ;
+            	cout  << hist[a].Autor5 << hist[a].Anio5  << "   PAG: " << hist[a].paginas5   << endl;      
+        	}
+    	}
 	}else{
-		cout<<" dato incorrecto"<<endl;
-	}
+    	cout<<" dato incorrecto"<<endl;
+	}	
+
+	
+	
 }
 //funcion para abrir el menu de prestamos 
 
@@ -176,12 +191,20 @@ void menuPrestamos(Book libros[]){
 	int opcion, indicePrestamos = 0;
 
 	do {
+		cout<<endl;
+		Logo();
+		cout<<"\t\t\t\t\t\t\t________________MENU DE PRESTAMOS________________"<<endl;
+		cout<<"\t\t\t\t\t\t\t|\t\t                      \t\t|"; //para centrar  5 \t ojo se trabaja con pantalla completa
+		cout<<endl<<"\t\t\t\t\t\t\t|\t1.- Prestamo de algun libro.\t\t|"<<endl;
+		cout<<"\t\t\t\t\t\t\t|\t\t                      \t\t|";
+		cout<<endl<<"\t\t\t\t\t\t\t|\t2.- Historial de prestamos. \t\t|"<<endl;
+		cout<<"\t\t\t\t\t\t\t|\t\t                      \t\t|";
+		cout<<endl<<"\t\t\t\t\t\t\t|\t0.- Salir.                  \t\t|"<<endl;
+		cout<<"\t\t\t\t\t\t\t|\t\t                      \t\t|";
+		cout<<endl<<"\t\t\t\t\t\t\t|_______________________________________________|"<<endl;;
+		cout<<endl<<"\t\t\t\t\t\t\t\t \tIngrese la respuesta: ";
 
-        cout << endl;
-        cout << "1. Prestamo de algun libro." << endl;
-        cout << "2. Historial de prestamos." << endl;
-        cout << "3. SALIR." << endl;
-        cout << "Digite la opcion: ";
+        
 
         while (true) {
             cin >> opcion;
@@ -190,16 +213,17 @@ void menuPrestamos(Book libros[]){
             if (cin.fail()) {
                 cin.clear(); // Limpiar el estado de error de cin
                 cin.ignore(10000, '\n'); // Ignorar la entrada incorrecta
-                cout << "Opción inválida, por favor intente de nuevo: ";
+                cout << "\t\t\t\t\t\t\tOpcion invalida, por favor intente de nuevo: ";
             } else {
                 break; // Salir del bucle si la entrada es válida
             }
         }
+        system("cls");
 
         switch (opcion) {
             case 1: {
             	Menu_Mostrar();
-                cout << "Digite el ID del libro: ";
+                cout << "\t\t\t\t\t\t\tDigite el ID del libro: ";
 
                 while (true) {
                     cin >> buscarID;
@@ -208,7 +232,7 @@ void menuPrestamos(Book libros[]){
                     if (cin.fail()) {
                         cin.clear(); // Limpiar el estado de error de cin
                         cin.ignore(10000, '\n'); // Ignorar la entrada incorrecta
-                        cout << "ID inválido, por favor intente de nuevo: ";
+                        cout << "\t\t\t\t\t\t\tID invalido, por favor intente de nuevo: ";
                     } else {
                         break; // Salir del bucle si la entrada es válida
                     }
@@ -221,16 +245,16 @@ void menuPrestamos(Book libros[]){
                 mostrarHistorial(prestamos, indicePrestamos);
                 break;
             }
-            case 3: {
-                cout << "Saliendo del programa." << endl;
+            case 0: {
+                cout << "\t\t\t\t\t\t\tSaliendo del programa." << endl;
                 break;
             }
             default: {
-                cout << "Opción inválida, por favor intente de nuevo." << endl;
+                cout << "\t\t\t\t\t\t\tOpcion invalida, por favor intente de nuevo." << endl;
                 break;
             }
         }
-    } while (opcion != 3);
+    } while (opcion != 0);
 
 	cout<<endl;
 	system("PAUSE");
@@ -338,15 +362,37 @@ void Menu_Principal(){
 			}
 		}while(resp!=0);
 }
-//MENU MOSTRAR
+//MENU MOSTRAR INVENTARIO
 void Menu_Mostrar(){
 			
 	int numcateg;
-	cout<<"ESCRIBE EL NUMERO DE LA CATEGORIA"<<endl<<"1. Comunicacion     2.-matematica     3.-programacion     4.-quimica     5.-historia"<<endl;
+	
+
+	Logo();
+	cout<<"\t\t\t\t\t\t\t_________________MENU INVENTARIO_________________"<<endl;
+	cout<<"\t\t\t\t\t\t\t|\t\t                  \t\t|"; //para centrar  5 \t ojo se trabaja con pantalla completa
+	cout<<endl<<"\t\t\t\t\t\t\t|\t\t1.- Comunicacion. \t\t|"<<endl;
+	cout<<"\t\t\t\t\t\t\t|\t\t                  \t\t|";
+	cout<<endl<<"\t\t\t\t\t\t\t|\t\t2.- Matematica.   \t\t|"<<endl;
+	cout<<"\t\t\t\t\t\t\t|\t\t                  \t\t|";
+	cout<<endl<<"\t\t\t\t\t\t\t|\t\t3.- Programacion. \t\t|"<<endl;
+	cout<<"\t\t\t\t\t\t\t|\t\t                  \t\t|";
+	cout<<endl<<"\t\t\t\t\t\t\t|\t\t4.- Quimica.      \t\t|"<<endl;
+	cout<<"\t\t\t\t\t\t\t|\t\t                  \t\t|";
+	cout<<endl<<"\t\t\t\t\t\t\t|\t\t5.- Historia.     \t\t|"<<endl;
+	cout<<"\t\t\t\t\t\t\t|\t\t                  \t\t|";
+	cout<<endl<<"\t\t\t\t\t\t\t|\t\t0.- Salir.        \t\t|"<<endl;
+	cout<<"\t\t\t\t\t\t\t|\t\t                  \t\t|";
+	cout<<endl<<"\t\t\t\t\t\t\t|_______________________________________________|"<<endl;;
+	cout<<endl<<"\t\t\t\t\t\t\t\t \tIngrese la respuesta: ";
+	
 	cin>>numcateg;
+	system("cls");
 	mostrar(numcateg);
+	
 	cout<<endl;
 	system("PAUSE");
+	
 }
 	        
 
@@ -359,7 +405,7 @@ void Menu_Usuario(){
 		//MENU
 		Logo();
 
-		cout<<"\t\t\t\t\t\t__________________MENU PRINCIPAL_________________________"<<endl;
+		cout<<"\t\t\t\t\t\t__________________MENU DE USUARIO________________________"<<endl;
 			cout<<"\t\t\t\t\t\t|\t\t                              \t\t|"; //para centrar  5 \t ojo se trabaja con pantalla completa
 			cout<<endl<<"\t\t\t\t\t\t|\t\t1.- Registrarse.             \t\t|"<<endl;
 			cout<<"\t\t\t\t\t\t|\t\t                              \t\t|";

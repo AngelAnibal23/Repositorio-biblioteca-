@@ -5,6 +5,7 @@ void Menu_Principal();
 void Menu_Usuario();
 void Logo();
 void Menu_Mostrar();
+
 using namespace std;
 //ESTRUCTURA DE DATOS PERSONALES
 struct comunicacion{
