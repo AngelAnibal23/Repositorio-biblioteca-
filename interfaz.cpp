@@ -114,29 +114,29 @@ void mostrarHistorial(const Prestamo prestamos[], int cantidad) {
 }
 
 comunicacion comu [10] = {
-    {"Carlos Fernandez", 2016, 450, "Teoria y Practica de la Comunicacion", 9783161484100},
-	{"Ana Martinez", 2019, 380, "Comunicacion Interpersonal en el Ambito Academico",9781402894626},
-    {"Jorge Ramirez", 2021, 410, "Comunicacion Digital para Estudiantes Universitarios",9780743273565}
+    {"Carlos Fernandez", 2016, 450, "Teoria y Practica de la Comunicacion", 101},
+	{"Ana Martinez", 2019, 380, "Comunicacion Interpersonal en el Ambito Academico", 102},
+    {"Jorge Ramirez", 2021, 410, "Comunicacion Digital para Estudiantes Universitarios", 103}
 };
 matematica mate [10] = {
-	{"Erwin Kreyszig",2007,1272,"Matematicas avanzadas para ingenieros",9780061120084},
-	{"Granville, Smith y Longley",2012,960,"Calculo diferencial e integral",9780156027656},
-	{"Serge Lang",1996,480,"Algebra Lineal",9780060935467}
+	{"Erwin Kreyszig",2007,1272,"Matematicas avanzadas para ingenieros", 104},
+	{"Granville, Smith y Longley",2012,960,"Calculo diferencial e integral", 103},
+	{"Serge Lang",1996,480,"Algebra Lineal", 105}
 };
 programacion progr [10] = {
-	{"Luis Torres",2018,520,"Introduccion a la Programacion con Python",9781568650401},
-	{"Marta Sanchez",2017,480,"Programacion en Java para Universitarios",9780385493574},
-	{"Jose Hernandez",2020,550,"Fundamentos de Programacion en C++",9780140283297}
+	{"Luis Torres",2018,520,"Introduccion a la Programacion con Python", 106},
+	{"Marta Sanchez",2017,480,"Programacion en Java para Universitarios", 107},
+	{"Jose Hernandez",2020,550,"Fundamentos de Programacion en C++", 108}
 };
 quimica quimi [10] = {
-	{"Ricardo Morales",2016,700,"Quimica General: Principios y Aplicaciones Modernas",9780743273566},
-	{"Ana Fernandez",2018,640,"Quimica Organica: Teoria y Practica",9780451529277},
-	{"Javier Gomez",2019,580,"Quimica Inorganica para Estudiantes Universitarios",9780743273573}
+	{"Ricardo Morales",2016,700,"Quimica General: Principios y Aplicaciones Modernas", 109},
+	{"Ana Fernandez",2018,640,"Quimica Organica: Teoria y Practica",110},
+	{"Javier Gomez",2019,580,"Quimica Inorganica para Estudiantes Universitarios",111}
 };
 historia hist [10] = {
-	{"Laura Rodriguez",2015,720,"Historia Contemporanea: Desde la Revolución Francesa hasta la Globalizacion",9780375755163},
-	{"Miguel Alvarez",2017,650,"Historia de America Latina: Colonizacion y Desarrollo",9780440226127},
-	{"Carmen Sanchez",2020,600,"Historia de España: Desde los Visigodos hasta la Democracia",9781402894633}
+	{"Laura Rodriguez",2015,720,"Historia Contemporanea: Desde la Revolución Francesa hasta la Globalizacion",112},
+	{"Miguel Alvarez",2017,650,"Historia de America Latina: Colonizacion y Desarrollo",113},
+	{"Carmen Sanchez",2020,600,"Historia de España: Desde los Visigodos hasta la Democracia",114}
 };
 
 void mostrar(int numcateg){
@@ -187,7 +187,7 @@ void mostrar(int numcateg){
 
 void menuPrestamos(Book libros[]){
      Prestamo prestamos[cantidadPrestamos];
-	long long buscarID;
+	int buscarID;
 	int opcion, indicePrestamos = 0;
 
 	do {
@@ -265,21 +265,21 @@ void menuPrestamos(Book libros[]){
 
 
  Book libros[cantidadLibros] = {
-        {9783161484100, "Teoria y Práctica de la Comunicacion", "Carlos Fernandez", 2016, 450},
-        {9781402894626, "Comunicacion Interpersonal en el Ambito Academico", "Ana Martinez", 2019, 380},
-        {9780743273565, "Comunicación Digital para Estudiantes Universitarios", "Jorge Ramirez", 2021, 410},
-        {9780061120084, "Matematicas avanzadas para ingenieros", "Erwin Kreyszig", 2007, 1272},
-        {9780156027656, "Calculo diferencial e integral", "Granville, Smith y Longley", 2012, 960},
-        {9780060935467, "Algebra Lineal", "Serge Lang", 1996, 480},
-        {9781568650401, "Introduccion a la Programacion con Python", "Luis Torres", 2018, 520},
-        {9780385493574, "Programacion en Java para Universitarios", "Marta Sanchez", 2017, 480},
-        {9780140283297, "Fundamentos de Programación en C++", "Jose Hernandez", 2020, 550},
-        {9780743273566, "Quimica General: Principios y Aplicaciones Modernas", "Ricardo Morales", 2016, 700},
-        {9780451529277, "Quimica Organica: Teoria y Practica", "Ana Fernandez", 2018, 640},
-        {9780743273573, "Quimica Inorganica para Estudiantes Universitarios", "Javier Gomez", 2019, 580},
-        {9780375755163, "Historia Contemporanea: Desde la Revolución Francesa hasta la Globalizacion", "Laura Rodriguez", 2015, 720},
-        {9780440226127, "Historia de America Latina: Colonizacion y Desarrollo", "Miguel Alvarez", 2017, 650},
-        {9781402894633, "Historia de España: Desde los Visigodos hasta la Democracia", "Carmen Sanchez", 2020, 600}
+        {101, "Teoria y Practica de la Comunicacion", "Carlos Fernandez", 2016, 450},
+        {102, "Comunicacion Interpersonal en el Ambito Academico", "Ana Martinez", 2019, 380},
+        {103, "Comunicacion Digital para Estudiantes Universitarios", "Jorge Ramirez", 2021, 410},
+        {104, "Matematicas avanzadas para ingenieros", "Erwin Kreyszig", 2007, 1272},
+        {105, "Calculo diferencial e integral", "Granville, Smith y Longley", 2012, 960},
+        {106, "Algebra Lineal", "Serge Lang", 1996, 480},
+        {107, "Introduccion a la Programacion con Python", "Luis Torres", 2018, 520},
+        {108, "Programacion en Java para Universitarios", "Marta Sanchez", 2017, 480},
+        {109, "Fundamentos de Programacion en C++", "Jose Hernandez", 2020, 550},
+        {110, "Quimica General: Principios y Aplicaciones Modernas", "Ricardo Morales", 2016, 700},
+        {111, "Quimica Organica: Teoria y Practica", "Ana Fernandez", 2018, 640},
+        {112, "Quimica Inorganica para Estudiantes Universitarios", "Javier Gomez", 2019, 580},
+        {113, "Historia Contemporanea: Desde la Revolución Francesa hasta la Globalizacion", "Laura Rodriguez", 2015, 720},
+        {114, "Historia de America Latina: Colonizacion y Desarrollo", "Miguel Alvarez", 2017, 650},
+        {115, "Historia de Espa�a: Desde los Visigodos hasta la Democracia", "Carmen Sanchez", 2020, 600}
     };
 
 

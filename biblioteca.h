@@ -13,35 +13,35 @@ struct comunicacion{
     int Anio1;
     int paginas1;
     string Nombre1;
-    long long ID1;
+    int ID1;
 };
 struct matematica{
 	string Autor2;
 	int Anio2;
 	int paginas2;
 	string Nombre2;
-	long long ID2;
+	int ID2;
 };
 struct programacion{
 	string Autor3;
 	int Anio3;
 	int paginas3;
 	string Nombre3;
-	long long ID3;
+	int ID3;
 };
 struct quimica{
 	string Autor4;
 	int Anio4;
 	int paginas4;
 	string Nombre4;
-	long long ID4;
+	int ID4;
 };
 struct historia{
 	string Autor5;
 	int Anio5;
 	int paginas5;
 	string Nombre5;
-	long long ID5;
+	int ID5;
 };
 
 struct Registro{
