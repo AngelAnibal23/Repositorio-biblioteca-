@@ -1,13 +1,26 @@
 #ifndef BIBLIOTECA_H
 #define BIBLIOTECA_H
+#include <string>
+
 
 void Menu_Principal();
 void Menu_Usuario();
-void Logo();
 void Menu_Mostrar();
+void mostrar(int numcateg); 
 
 using namespace std;
 //ESTRUCTURA DE DATOS PERSONALES
+
+
+struct Book {
+    int id; 
+    string nombre;
+    string autor;
+    int anio;
+    int paginas;
+};
+
+
 struct comunicacion{
     string Autor1;
     int Anio1;
@@ -60,14 +73,6 @@ struct Prestamo {
     string fecha_devolucion;
 };
 
-struct Book {
-    long long id; 
-    string nombre;
-    string autor;
-    int anio;
-    int paginas;
-};
-//void Registrar(Registro REG[], int &cant_usu); 
 
  
 #endif

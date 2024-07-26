@@ -1,17 +1,12 @@
 #include <iostream>
+#include <string>
+#include "funciones.h"
 #include "biblioteca.h"
-#include "estructuras.h"
-using namespace std;
-//Variables Globales:
 
+using namespace std;
 
 int main() {
-	
-	int cantidad_de_usarios=0;
-		
-
-	Menu_Principal();
-	
-	
+    int cantidad_de_usuarios = 0;
+    Menu_Principal();
     return 0;
 }
