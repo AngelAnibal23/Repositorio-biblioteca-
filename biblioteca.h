@@ -18,6 +18,7 @@ struct Book {
     string autor;
     int anio;
     int paginas;
+    int cantidad;
 };
 
 
@@ -27,6 +28,7 @@ struct comunicacion{
     int paginas1;
     string Nombre1;
     int ID1;
+    int cantidad1;
 };
 struct matematica{
 	string Autor2;
@@ -34,6 +36,7 @@ struct matematica{
 	int paginas2;
 	string Nombre2;
 	int ID2;
+	int cantidad2;
 };
 struct programacion{
 	string Autor3;
@@ -41,6 +44,7 @@ struct programacion{
 	int paginas3;
 	string Nombre3;
 	int ID3;
+	int cantidad3;
 };
 struct quimica{
 	string Autor4;
@@ -48,6 +52,7 @@ struct quimica{
 	int paginas4;
 	string Nombre4;
 	int ID4;
+	int cantidad4;
 };
 struct historia{
 	string Autor5;
@@ -55,6 +60,7 @@ struct historia{
 	int paginas5;
 	string Nombre5;
 	int ID5;
+	int cantidad5;
 };
 
 struct Registro{
