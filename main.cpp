@@ -6,7 +6,7 @@
 using namespace std;
 
 int main() {
-    int cantidad_de_usuarios = 0;
+    //int cantidad_de_usuarios = 0;
     Menu_Principal();
     return 0;
 }

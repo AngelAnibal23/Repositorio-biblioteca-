@@ -5,9 +5,9 @@
 #include <string>
 
 int cantidad_de_usuarios = 0; 
-
-Registro registrar[30]; 
-
+int cantidad_de_administradores=0;
+Registro_usuario registrar_usuario[30]; 
+Registro_Administrador registrar_administrador[30];
 using namespace std;
 
 void Logo() {
@@ -20,7 +20,50 @@ void Logo() {
     cout<<"\t\t\t\t\t----------------------------------------------------------------------------"<<endl<<endl<<endl;
 }
 
+//INGRESA AL MENU DE ADMINISTRADOR:	        
+void Menu_Administrador(){
 
+	cout<<endl;
+	int resp;
+	do{
+		//MENU
+		Logo();
+
+		cout<<"\t\t\t\t\t\t__________________MENU DE ADMINISTRADOR__________________________"<<endl;
+			cout<<"\t\t\t\t\t\t|\t\t                                 \t\t|"; //para centrar  5 \t ojo se trabaja con pantalla completa
+			cout<<endl<<"\t\t\t\t\t\t|\t\t1.- Registrarse.                 \t\t|"<<endl;
+			cout<<"\t\t\t\t\t\t|\t\t                                 \t\t|";
+			cout<<endl<<"\t\t\t\t\t\t|\t\t2.- Mostrar personas registradas.\t\t|"<<endl;
+			cout<<"\t\t\t\t\t\t|\t\t                                 \t\t|";
+			cout<<endl<<"\t\t\t\t\t\t|\t\t3.- Agregar un libro.            \t\t|"<<endl;
+			cout<<"\t\t\t\t\t\t|\t\t                                 \t\t|";
+			cout<<endl<<"\t\t\t\t\t\t|\t\t0.- Volver al menu principal.    \t\t|"<<endl;
+			cout<<"\t\t\t\t\t\t|\t\t                                 \t\t|";
+			cout<<endl<<"\t\t\t\t\t\t|_______________________________________________________________|"<<endl;;
+			cout<<endl<<"\t\t\t\t\t\t\t \tIngrese la respuesta: ";
+			valida(resp);
+		system("cls");
+
+		if(resp==1){
+			Registrar_admin(registrar_administrador,cantidad_de_administradores);
+		}
+		if(resp==2){
+			Mostrar_usuarios_administradores(registrar_administrador,registrar_usuario);
+			
+	    }
+		if(resp==3){
+	       //menuPrestamos(libros); 
+		}
+
+	}while(resp!=0);
+
+
+	cout<<endl;
+	system("PAUSE");
+	cout<<endl;
+	system("cls");
+}
+//INGRESA AL MENU PRINCIPAL
 void Menu_Principal() {
     int resp;
     do {
@@ -35,19 +78,19 @@ void Menu_Principal() {
         cout<<"\t\t\t\t\t\t\t|\t\t                  \t\t|";
         cout<<endl<<"\t\t\t\t\t\t\t|_______________________________________________|"<<endl;
         cout<<endl<<"\t\t\t\t\t\t\t\t \tIngrese la respuesta: ";
-        cin>>resp;
+        valida(resp);
 
         system("cls");
         if(resp==1) {
             Menu_Usuario();
         } else if(resp==2) {
-            //Menu_Administrador()
+            Menu_Administrador();
         }
     } while(resp!=0);
 }
 
 
-	 
+//INGRESA AL MENU DE USUARIO	 
 void Menu_Usuario() {
     int resp;
     do {
@@ -64,11 +107,11 @@ void Menu_Usuario() {
         cout<<"\t\t\t\t\t\t|\t\t                              \t\t|";
         cout<<endl<<"\t\t\t\t\t\t|_______________________________________________________|"<<endl;
         cout<<endl<<"\t\t\t\t\t\t\t \tIngrese la respuesta: ";
-        cin>>resp;
+        valida(resp);
         system("cls");
 
         if(resp==1) {
-            Registrar(registrar, cantidad_de_usuarios);
+            Registrar_usuario(registrar_usuario, cantidad_de_usuarios);
         }
         if(resp==2) {
             Menu_Mostrar();
@@ -85,7 +128,7 @@ void Menu_Usuario() {
     system("cls");
 }
 
-
+//INGRESA AL MENU INVENTARIO
 void Menu_Mostrar(){
 			
 	int numcateg;
@@ -108,8 +151,8 @@ void Menu_Mostrar(){
 	cout<<"\t\t\t\t\t\t\t|\t\t                  \t\t|";
 	cout<<endl<<"\t\t\t\t\t\t\t|_______________________________________________|"<<endl;;
 	cout<<endl<<"\t\t\t\t\t\t\t\t \tIngrese la respuesta: ";
-	cin>>numcateg;
 	
+	valida(numcateg);
 	system("cls");
 	mostrar(numcateg);
 	

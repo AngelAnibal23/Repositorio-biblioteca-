@@ -133,20 +133,7 @@ void menuPrestamos(Book libros[]){
             case 1: {
             	Menu_Mostrar();
                 cout << "\t\t\t\t\t\t\tDigite el ID del libro: ";
-
-                while (true) {
-                    cin >> buscarID;
-
-                    // Verificar si la entrada es válida
-                    if (cin.fail()) {
-                        cin.clear(); // Limpiar el estado de error de cin
-                        cin.ignore(10000, '\n'); // Ignorar la entrada incorrecta
-                        cout << "\t\t\t\t\t\t\tID invalido, por favor intente de nuevo: ";
-                    } else {
-                        break; // Salir del bucle si la entrada es válida
-                    }
-                }
-
+				valida(buscarID);
                 prestamoLibro(libros, cantidadLibros, buscarID, prestamos, indicePrestamos);
                 break;
             }
@@ -155,7 +142,7 @@ void menuPrestamos(Book libros[]){
                 break;
             }
             case 0: {
-                cout << "\t\t\t\t\t\t\tSaliendo del programa." << endl;
+                cout << "\t\t\t\t\t\t\tSaliendo." << endl;
                 break;
             }
             default: {
@@ -175,4 +162,17 @@ void menuPrestamos(Book libros[]){
 
 	system("cls");
 }
-
+void valida(int &entrada){
+				
+    while (true) {
+        cin >> entrada;
+        // Verificar si la entrada es válida
+        if (cin.fail()) {
+        	cin.clear(); // Limpiar el estado de error de cin
+        	cin.ignore(10000, '\n'); // Ignorar la entrada incorrecta
+        	cout << "\t\t\t\t\t\t\t Existe algun error. Por favor intente de nuevo: ";
+        } else {
+            break; // Salir del bucle si la entrada es válida
+        }
+    }
+}

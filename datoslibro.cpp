@@ -3,7 +3,7 @@
 #include <string>
 
 const int cantidadLibros = 15;  
-
+//INVENTARIO DE LIBROS
  Book libros[cantidadLibros] = {
         {101, "Teoria y Practica de la Comunicacion", "Carlos Fernandez", 2016, 450, 2},
         {102, "Comunicacion Interpersonal en el Ambito Academico", "Ana Martinez", 2019, 380, 1},
