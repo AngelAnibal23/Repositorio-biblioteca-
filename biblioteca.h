@@ -3,13 +3,9 @@
 #include <string>
 
 
-void Menu_Principal();
-void Menu_Usuario();
-void Menu_Mostrar();
-void mostrar(int numcateg); 
 
 using namespace std;
-//ESTRUCTURA DE DATOS PERSONALES
+
 
 
 struct Book {
@@ -21,7 +17,7 @@ struct Book {
     int cantidad;
 };
 
-
+//ESTRUCTURAS DE LIBROS
 struct comunicacion{
     string Autor1;
     int Anio1;
@@ -62,8 +58,8 @@ struct historia{
 	int ID5;
 	int cantidad5;
 };
-
-struct Registro{
+//ESTRUCTURAS DE REGISTRO DE DATOS PERSONALES
+struct Registro_usuario{
 	string NOMBRE;
 	string DNI;
 	string CODIGO;
@@ -72,7 +68,16 @@ struct Registro{
 	string SEXO;
 	string TELEFONO;
 };
-
+struct Registro_Administrador{
+	string NOMBRE;
+	string DNI;
+	string CODIGO;
+	string EDAD;
+	string EMAIL;
+	string SEXO;
+	string TELEFONO;
+};
+//ESTRUCTURA QUE GUARDA DATOS DEL PRESTAMO DE UN LIBRO
 struct Prestamo {
     string nombre_libro;
     string fecha_entrega;
