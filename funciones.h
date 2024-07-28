@@ -30,6 +30,8 @@ void Mostrar_usuarios_administradores(Registro_Administrador RE[], Registro_usua
 void Registrar_admin(Registro_Administrador REG[],int &cant_admin);
 void valida(int &entrada);
 void QuitarL();
+void Mostrar_admin(); 
+void mostrar_prestamos_activos_admin(int cantidad_usuarios, Registro_usuario usuarios[]);
 void quitarlibro();
 void agregarlibro();
 void AgregarL();
