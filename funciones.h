@@ -29,6 +29,8 @@ void Menu_Administrador();
 void Mostrar_usuarios_administradores(Registro_Administrador RE[], Registro_usuario REU[]);
 void Registrar_admin(Registro_Administrador REG[],int &cant_admin);
 void valida(int &entrada);
+void QuitarL();
+void quitarlibro();
 void agregarlibro();
 void AgregarL();
 void librosobtenidos();

@@ -37,6 +37,8 @@ void Menu_Administrador(){
 			cout<<"\t\t\t\t\t\t|\t\t                                 \t\t|";
 			cout<<endl<<"\t\t\t\t\t\t|\t\t3.- Agregar un libro.            \t\t|"<<endl;
 			cout<<"\t\t\t\t\t\t|\t\t                                 \t\t|";
+			cout<<endl<<"\t\t\t\t\t\t|\t\t4.- Quitar libros.               \t\t|"<<endl;
+			cout<<"\t\t\t\t\t\t|\t\t                                 \t\t|";
 			cout<<endl<<"\t\t\t\t\t\t|\t\t0.- Volver al menu principal.    \t\t|"<<endl;
 			cout<<"\t\t\t\t\t\t|\t\t                                 \t\t|";
 			cout<<endl<<"\t\t\t\t\t\t|_______________________________________________________________|"<<endl;;
@@ -52,7 +54,10 @@ void Menu_Administrador(){
 			
 	    }
 		if(resp==3){
-	    AgregarL(); //menuPrestamos(libros); 
+	    	AgregarL(); //menuPrestamos(libros); 
+		}
+		if(resp==4){
+			QuitarL();
 		}
 
 	}while(resp!=0);
@@ -207,6 +212,30 @@ void AgregarL(){
 	
 	agregarlibro();
 	
+	system("PAUSE");
+	system("cls");
+}
+void QuitarL(){
+	Logo();
+	cout<<"\t\t\t\t\t\t\t_________________MENU INVENTARIO_________________"<<endl;
+	cout<<"\t\t\t\t\t\t\t|\t\t                  \t\t|"; 
+	cout<<endl<<"\t\t\t\t\t\t\t|\t\t1.- Comunicacion. \t\t|"<<endl;
+	cout<<"\t\t\t\t\t\t\t|\t\t                  \t\t|";
+	cout<<endl<<"\t\t\t\t\t\t\t|\t\t2.- Matematica.   \t\t|"<<endl;
+	cout<<"\t\t\t\t\t\t\t|\t\t                  \t\t|";
+	cout<<endl<<"\t\t\t\t\t\t\t|\t\t3.- Programacion. \t\t|"<<endl;
+	cout<<"\t\t\t\t\t\t\t|\t\t                  \t\t|";
+	cout<<endl<<"\t\t\t\t\t\t\t|\t\t4.- Quimica.      \t\t|"<<endl;
+	cout<<"\t\t\t\t\t\t\t|\t\t                  \t\t|";
+	cout<<endl<<"\t\t\t\t\t\t\t|\t\t5.- Historia.     \t\t|"<<endl;
+	cout<<"\t\t\t\t\t\t\t|\t\t                  \t\t|";
+	cout<<endl<<"\t\t\t\t\t\t\t|\t\t0.- Salir.        \t\t|"<<endl;
+	cout<<"\t\t\t\t\t\t\t|\t\t                  \t\t|";
+	cout<<endl<<"\t\t\t\t\t\t\t|_______________________________________________|"<<endl;;
+	cout<<endl<<"\t\t\t\t\t\t\t\t \tIngrese la respuesta: ";
+
+	quitarlibro();
+
 	system("PAUSE");
 	system("cls");
 }
