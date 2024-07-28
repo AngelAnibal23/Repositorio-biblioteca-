@@ -99,7 +99,7 @@ void Mostrar_usuarios_administradores(Registro_Administrador RE[], Registro_usua
 	cout<<"\t\t\t\t\t\t\tUSUARIOS REGISTRADOS:"<<endl;
 	for(int i=0;i<cantidad_de_usuarios;i++){
 		cout<<"\t\t\t\t\t\t\t"<<i+1<<".- "<<REU[i].NOMBRE<<" "<<REU[i].APELLIDO_PAT<<" "<<REU[i].APELLIDO_MAT<<endl;
-		cout<<"\t\t\t\t\t\t\t  SEXO:"<<REU[i].SEXO<<"   EDAD:"<<REU[i].EDAD<<endl;
+		cout<<"\t\t\t\t\t\t\t  SEXO:"<<REU[i].SEXO<<"   EDAD:"<<REU[i].EDAD<<endl<<REU[i].prestamos[i].nombre_libro;
 	}
 	system("PAUSE");
 	system("cls");

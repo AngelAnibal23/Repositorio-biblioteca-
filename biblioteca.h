@@ -55,6 +55,12 @@ struct historia{
 	int cantidad5;
 };
 //ESTRUCTURAS DE REGISTRO DE DATOS PERSONALES
+//ESTRUCTURA QUE GUARDA DATOS DEL PRESTAMO DE UN LIBRO
+struct Prestamo {
+    string nombre_libro;
+    string fecha_entrega;
+    string fecha_devolucion;
+};
 struct Registro_usuario{
 	string NOMBRE;
 	string APELLIDO_PAT;
@@ -65,7 +71,11 @@ struct Registro_usuario{
 	string EMAIL;
 	string SEXO;
 	string TELEFONO;
+	Prestamo prestamos[15];
+	string indice_de_prestamos;	
 };
+
+
 struct Registro_Administrador{
 	string NOMBRE;
 	string APELLIDO_PAT;
@@ -76,13 +86,9 @@ struct Registro_Administrador{
 	string EMAIL;
 	string SEXO;
 	string TELEFONO;
+
 };
-//ESTRUCTURA QUE GUARDA DATOS DEL PRESTAMO DE UN LIBRO
-struct Prestamo {
-    string nombre_libro;
-    string fecha_entrega;
-    string fecha_devolucion;
-};
+
 
 
  

@@ -84,6 +84,7 @@ void Menu_Principal() {
         if(resp==1) {
             Menu_Usuario();
         } else if(resp==2) {
+        	
             Menu_Administrador();
         }
     } while(resp!=0);
@@ -93,9 +94,10 @@ void Menu_Principal() {
 //INGRESA AL MENU DE USUARIO	 
 void Menu_Usuario() {
     int resp;
+    int retiene=0;
     do {
         Logo();
-        cout<<"\t\t\t\t\t\t__________________MENU PRINCIPAL_________________________"<<endl;
+        cout<<"\t\t\t\t\t\t__________________MENU DE USUARIO_________________________"<<endl;
         cout<<"\t\t\t\t\t\t|\t\t                              \t\t|";
         cout<<endl<<"\t\t\t\t\t\t|\t\t1.- Registrarse.             \t\t|"<<endl;
         cout<<"\t\t\t\t\t\t|\t\t                              \t\t|";
@@ -105,26 +107,47 @@ void Menu_Usuario() {
         cout<<"\t\t\t\t\t\t|\t\t                              \t\t|";
         cout<<endl<<"\t\t\t\t\t\t|\t\t0.- Volver al menu principal.\t\t|"<<endl;
         cout<<"\t\t\t\t\t\t|\t\t                              \t\t|";
-        cout<<endl<<"\t\t\t\t\t\t|_______________________________________________________|"<<endl;
+        cout<<endl<<"\t\t\t\t\t\t|____________________CU="<<cantidad_de_usuarios<<retiene<<indicePrestamos<<"___________________________|"<<endl;
         cout<<endl<<"\t\t\t\t\t\t\t \tIngrese la respuesta: ";
         valida(resp);
-        system("cls");
-
+        if(resp==1){
+			if(retiene==1){
+        		cout<<"\t\t\t\t\t\tYa se encuentra registrado.";
+            	system("PAUSE");
+			}
+			
+		}
+		system("cls");
         if(resp==1) {
+        	if(retiene==0){
+			
             Registrar_usuario(registrar_usuario, cantidad_de_usuarios);
+            retiene=1;
+            }else{
+            	
+            	
+			}
         }
+        
         if(resp==2) {
             Menu_Mostrar();
 			system("cls");
         }
         if(resp==3) {
-            menuPrestamos(libros); 
+        	if(retiene==0){
+        		Logo();
+        		cout<<"\t\t\t\t\t\tDebe registrarse antes.";
+        		system("PAUSE");
+        		system("cls");
+			}else{
+            	menuPrestamos(libros); 
+            }
         }
+        if(resp==0){
+        	retiene=0;
+		}
     } while(resp!=0);
-
-    cout<<endl;
-    system("PAUSE");
-    cout<<endl;
+	
     system("cls");
 }
 

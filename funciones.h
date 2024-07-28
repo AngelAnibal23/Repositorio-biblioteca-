@@ -10,7 +10,9 @@ extern const int cantidadLibros;
 extern Book libros[15];
 extern int cantidad_de_usuarios; 
 extern int cantidad_de_administradores; 
-
+extern int indicePrestamos;
+extern Registro_usuario registrar_usuario[30];
+//extern int indicePrestamos;
 void Logo();//FUNCION QUE IMPRIME EL LOGO "BIBLIOTECA" UBICADO EN INTERFAZ
 string obtenerFechaHoraActual();//FUNCION QUE OBTIENE LA HORA UBICADO EN PRESTAMOS
 string obtenerFechaDevolucion(int dias_sumar);//FUNCION QUE OBTIENE LA FECHA DE DEVOLUCION SUMANDO LOS DIAS DE PRESTAMO UBICADO EN PRESTAMO
