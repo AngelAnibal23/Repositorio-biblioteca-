@@ -60,6 +60,7 @@ struct Prestamo {
     string nombre_libro;
     string fecha_entrega;
     string fecha_devolucion;
+    int id_prestamo; 
 };
 struct Registro_usuario{
 	string NOMBRE;
@@ -71,8 +72,7 @@ struct Registro_usuario{
 	string EMAIL;
 	string SEXO;
 	string TELEFONO;
-	Prestamo prestamos[15];
-	string indice_de_prestamos;	
+	Prestamo prestamos[50];
 };
 
 
