@@ -61,7 +61,7 @@ void Registrar_usuario(Registro_usuario REG[], int &cant_usu) {
     system("PAUSE"); // Pausa el sistema
     cout << endl;
 
-    system("cls"); // Limpia la pantalla para volver al menÃº
+    system("cls"); // Limpia la pantalla para volver al menú
 }
 
 
@@ -114,10 +114,10 @@ void Registrar_admin(Registro_Administrador REG[], int &cant_admin) {
     cant_admin++; // Incrementa la cantidad de administradores registrados
 
     cout << endl;
-    system("PAUSE"); // Pausa el sistema para que el usuario lea la informaciÃ³n
+    system("PAUSE"); // Pausa el sistema para que el usuario lea la información
     cout << endl;
 
-    system("cls"); // Limpia la pantalla para volver al menÃº
+    system("cls"); // Limpia la pantalla para volver al menú
 }
 
 //FUNCION DE MOSTRAR USUARIOS Y ADMINISTRADORES REGISTRADOS
@@ -151,3 +151,4 @@ void Mostrar_usuarios_administradores(Registro_Administrador RE[], Registro_usua
     system("PAUSE"); // Pausa el sistema para que el usuario lea la informacion
     system("cls"); // Limpia la pantalla para volver al menu
 }
+

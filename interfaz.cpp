@@ -28,7 +28,7 @@ void Menu_Administrador() {
         // Muestra el logotipo
         Logo();
 
-        // Muestra el menú de administrador
+        // Muestra el menÃº de administrador
         cout << "\t\t\t\t\t\t__________________MENU DE ADMINISTRADOR__________________________" << endl;
         cout << "\t\t\t\t\t\t|\t\t                                 \t\t|";
         cout << endl << "\t\t\t\t\t\t|\t\t1.- Registrarse.                 \t\t|" << endl; 
@@ -80,7 +80,7 @@ void Menu_Principal() {
     int resp; // Variable para almacenar la respuesta del usuario
 
     do {
-        Logo(); // Llama a la función Logo para mostrar el logotipo
+        Logo(); // Llama a la funciÃ³n Logo para mostrar el logotipo
         cout << "\t\t\t\t\t\t\t__________________MENU PRINCIPAL_________________" << endl;
         cout << "\t\t\t\t\t\t\t|\t\t                  \t\t|";
         cout << endl << "\t\t\t\t\t\t\t|\t\t1.- Usuario libre.\t\t|" << endl; 
@@ -89,19 +89,19 @@ void Menu_Principal() {
         cout << "\t\t\t\t\t\t\t|\t\t                  \t\t|";
         cout << endl << "\t\t\t\t\t\t\t|\t\t0.- Salir.        \t\t|" << endl; 
         cout << "\t\t\t\t\t\t\t|\t\t                  \t\t|";
-        cout << endl << "\t\t\t\t\t\t\t|_______________________________________________|" << endl; // Línea final del menú
+        cout << endl << "\t\t\t\t\t\t\t|_______________________________________________|" << endl; // LÃ­nea final del menÃº
         cout << endl << "\t\t\t\t\t\t\t\t \tIngrese la respuesta: ";
 
-        valida(resp); // Llama a la funcion valida para obtener una opción válida del usuario
+        valida(resp); // Llama a la funcion valida para obtener una opciÃ³n vÃ¡lida del usuario
 
         system("cls"); // Limpia la pantalla
 
-        if (resp == 1) { // Si el usuario elige la opción 1
+        if (resp == 1) { // Si el usuario elige la opciÃ³n 1
             Menu_Usuario(); // Llama a la funcion Menu_Usuario para mostrar el menu de usuario libre
-        } else if (resp == 2) { // Si el usuario elige la opción 2
+        } else if (resp == 2) { // Si el usuario elige la opciÃ³n 2
             Menu_Administrador(); // Llama a la funcion Menu_Administrador para mostrar el menu de administrador
         }
-    } while (resp != 0); // Repite el menú hasta que el usuario elija salir (opción 0)
+    } while (resp != 0); // Repite el menÃº hasta que el usuario elija salir (opciÃ³n 0)
 }
 
 
@@ -109,10 +109,10 @@ void Menu_Principal() {
 //INGRESA AL MENU DE USUARIO	 
 void Menu_Usuario() {
     int resp; // Variable para almacenar la respuesta del usuario
-    int retiene = 0; // Variable para verificar si el usuario ya está registrado
+    int retiene = 0; // Variable para verificar si el usuario ya estÃ¡ registrado
 
     do {
-        Logo(); // Llamada a la función Logo para mostrar el logotipo
+        Logo(); // Llamada a la funciÃ³n Logo para mostrar el logotipo
         cout << "\t\t\t\t\t\t__________________MENU DE USUARIO_________________________" << endl;
         cout << "\t\t\t\t\t\t|\t\t                              \t\t|";
         cout << endl << "\t\t\t\t\t\t|\t\t1.- Registrarse.             \t\t|" << endl;
@@ -125,10 +125,10 @@ void Menu_Usuario() {
         cout << "\t\t\t\t\t\t|\t\t                              \t\t|";
         cout << endl << "\t\t\t\t\t\t|____________________CU=" << cantidad_de_usuarios << retiene << indicePrestamos << "___________________________|" << endl;
         cout << endl << "\t\t\t\t\t\t\t \tIngrese la respuesta: ";
-        valida(resp); // Llamada a la funcion valida para obtener una respuesta válida del usuario
+        valida(resp); // Llamada a la funcion valida para obtener una respuesta vÃ¡lida del usuario
 
-        if (resp == 1) { // Si el usuario elige la opción 1
-            if (retiene == 1) { // Verifica si ya está registrado
+        if (resp == 1) { // Si el usuario elige la opciÃ³n 1
+            if (retiene == 1) { // Verifica si ya estÃ¡ registrado
                 cout << "\t\t\t\t\t\tYa se encuentra registrado.";
                 system("PAUSE"); // Pausa el sistema para que el usuario pueda ver el mensaje
             }
@@ -139,7 +139,7 @@ void Menu_Usuario() {
         if (resp == 1) { // Si el usuario elige registrarse y no esta registrado
             if (retiene == 0) {
                 Registrar_usuario(registrar_usuario, cantidad_de_usuarios); // Llama a la funcion para registrar al usuario
-                retiene = 1; // Marca que el usuario ya está registrado
+                retiene = 1; // Marca que el usuario ya estÃ¡ registrado
             } else {
                 // No hace nada si ya esta registrado
             }
@@ -157,20 +157,20 @@ void Menu_Usuario() {
                 system("PAUSE"); // Pausa el sistema para que el usuario pueda ver el mensaje
                 system("cls"); // Limpia la pantalla
             } else {
-                menuPrestamos(libros); // Llama a la funcion para gestionar los préstamos de libros
+                menuPrestamos(libros); // Llama a la funcion para gestionar los prÃ©stamos de libros
             }
         }
 
         if (resp == 0) { // Si el usuario elige volver al menu principal
             retiene = 0; // Resetea la variable de retencion
         }
-    } while (resp != 0); // Repite el menu hasta que el usuario elija salir (opción 0)
+    } while (resp != 0); // Repite el menu hasta que el usuario elija salir (opciÃ³n 0)
     
     system("cls"); // Limpia la pantalla antes de salir
 }
 //INGRESA AL MENU INVENTARIO
 void Menu_Mostrar() {
-    int numcateg; // Variable para almacenar la opcion de categoría seleccionada por el usuario
+    int numcateg; // Variable para almacenar la opcion de categorÃ­a seleccionada por el usuario
 
     Logo(); // Llama a la funcion Logo para mostrar el logotipo
     cout << "\t\t\t\t\t\t\t_________________MENU INVENTARIO_________________" << endl;
@@ -202,7 +202,7 @@ void Menu_Mostrar() {
 void AgregarL() {
     Logo(); // Muestra el logotipo
 
-    // Muestra el menú de opciones para agregar libros
+    // Muestra el menÃº de opciones para agregar libros
     cout << "\t\t\t\t\t\t\t_________________MENU INVENTARIO_________________" << endl;
     cout << "\t\t\t\t\t\t\t|\t\t                  \t\t|"; 
     cout << endl << "\t\t\t\t\t\t\t|\t\t1.- Comunicacion. \t\t|" << endl; 
@@ -229,7 +229,7 @@ void AgregarL() {
 void QuitarL() {
     Logo(); // Muestra el logotipo
 
-    // Muestra el menú de opciones para quitar libros
+    // Muestra el menÃº de opciones para quitar libros
     cout << "\t\t\t\t\t\t\t_________________MENU INVENTARIO_________________" << endl;
     cout << "\t\t\t\t\t\t\t|\t\t                  \t\t|"; 
     cout << endl << "\t\t\t\t\t\t\t|\t\t1.- Comunicacion. \t\t|" << endl; 
@@ -252,4 +252,3 @@ void QuitarL() {
     system("PAUSE"); // Pausa el sistema 
     system("cls"); // Limpia la pantalla antes de volver al menu de administrador
 }
-
