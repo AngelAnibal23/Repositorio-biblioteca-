@@ -6,8 +6,10 @@
 
 using namespace std;
 
-const int cantidadPrestamos = 50;
 
+const int cantidadPrestamos = 30;
+//Prestamo prestamos[cantidadPrestamos];
+int indicePrestamos = 0;
 string obtenerFechaHoraActual() {
     time_t tiempo_actual = time(NULL);
     tm* ahora_local = localtime(&tiempo_actual);
@@ -32,20 +34,20 @@ string obtenerFechaDevolucion(int dias_sumar) {
     return string(devolucion);
 }
 
-void registrarPrestamo(Prestamo prestamos[], int& indice, const Book& libro, int dias_prestamo) {
+void registrarPrestamo(int& indice, const Book& libro, int dias_prestamo) {
     if (indice < cantidadPrestamos) {
-        Prestamo prestamo;
-        prestamo.nombre_libro = libro.nombre;
-        prestamo.fecha_entrega = obtenerFechaHoraActual();
-        prestamo.fecha_devolucion = obtenerFechaDevolucion(dias_prestamo);
-        prestamos[indice] = prestamo;
+        
+        registrar_usuario[cantidad_de_usuarios-1].prestamos[indice].nombre_libro = libro.nombre;
+        registrar_usuario[cantidad_de_usuarios-1].prestamos[indice].fecha_entrega = obtenerFechaHoraActual();
+        registrar_usuario[cantidad_de_usuarios-1].prestamos[indice].fecha_devolucion = obtenerFechaDevolucion(dias_prestamo);
+        registrar_usuario[cantidad_de_usuarios-1].indice_de_prestamos[indice]=indice;
         indice++;
     } else {
         cout << "El historial de prestamos esta lleno." << endl;
     }
 }
 
-void prestamoLibro(Book libros[], int cantidad, long long buscarID, Prestamo prestamos[], int& indicePrestamos) {
+void prestamoLibro(Book libros[], int cantidad, long long buscarID, int& indicePrestamos) {
     bool confirmacion = false;
 
     for (int i = 0; i < cantidad; ++i) {
@@ -71,7 +73,7 @@ void prestamoLibro(Book libros[], int cantidad, long long buscarID, Prestamo pre
             cout << "El libro se entrego en la fecha: " << endl << fechaHora << endl;
             cout << "Se espera que sea devuelto antes de: " << endl << fechaDevolucion << endl;
 
-            registrarPrestamo(prestamos, indicePrestamos, libros[i], tiempo);
+            registrarPrestamo(indicePrestamos, libros[i], tiempo);
 
             confirmacion = true;
             break;
@@ -83,22 +85,22 @@ void prestamoLibro(Book libros[], int cantidad, long long buscarID, Prestamo pre
     }
 }
 
-void mostrarHistorial(const Prestamo prestamos[], int cantidad) {
+void mostrarHistorial( int cantidad) {
     cout << "\nHistorial de Prestamos:\n";
     for (int i = 0; i < cantidad; ++i) {
-        cout << "Libro: " << prestamos[i].nombre_libro << endl;
-        cout << "Fecha de Prestamo: " << prestamos[i].fecha_entrega << endl;
-        cout << "Fecha de Devolucion: " << prestamos[i].fecha_devolucion << endl;
+        cout << "Libro: " << registrar_usuario[cantidad_de_usuarios-1].prestamos[i].nombre_libro << endl;
+        cout << "Fecha de Prestamo: " << registrar_usuario[cantidad_de_usuarios-1].prestamos[i].fecha_entrega << endl;
+        cout << "Fecha de Devolucion: " << registrar_usuario[cantidad_de_usuarios-1].prestamos[i].fecha_devolucion << endl;
         cout << "--------------------------\n";
     }
 }
 
 
 void menuPrestamos(Book libros[]){
-     Prestamo prestamos[cantidadPrestamos];
+    
 	int buscarID;
-	int opcion, indicePrestamos = 0;
-
+	int opcion;
+	
 	do {
 		cout<<endl;
 		Logo();
@@ -134,11 +136,11 @@ void menuPrestamos(Book libros[]){
             	Menu_Mostrar();
                 cout << "\t\t\t\t\t\t\tDigite el ID del libro: ";
 				valida(buscarID);
-                prestamoLibro(libros, cantidadLibros, buscarID, prestamos, indicePrestamos);
+                prestamoLibro(libros, cantidadLibros, buscarID, indicePrestamos);
                 break;
             }
             case 2: {
-                mostrarHistorial(prestamos, indicePrestamos);
+                mostrarHistorial(indicePrestamos);
                 break;
             }
             case 0: {

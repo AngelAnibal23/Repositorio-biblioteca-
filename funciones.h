@@ -10,7 +10,9 @@ extern const int cantidadLibros;
 extern Book libros[15];
 extern int cantidad_de_usuarios; 
 extern int cantidad_de_administradores; 
-
+extern int indicePrestamos;
+extern Registro_usuario registrar_usuario[30];
+//extern int indicePrestamos;
 void Logo();//FUNCION QUE IMPRIME EL LOGO "BIBLIOTECA" UBICADO EN INTERFAZ
 string obtenerFechaHoraActual();//FUNCION QUE OBTIENE LA HORA UBICADO EN PRESTAMOS
 string obtenerFechaDevolucion(int dias_sumar);//FUNCION QUE OBTIENE LA FECHA DE DEVOLUCION SUMANDO LOS DIAS DE PRESTAMO UBICADO EN PRESTAMO
@@ -27,9 +29,9 @@ void Menu_Administrador();
 void Mostrar_usuarios_administradores(Registro_Administrador RE[], Registro_usuario REU[]);
 void Registrar_admin(Registro_Administrador REG[],int &cant_admin);
 void valida(int &entrada);
+void QuitarL();
+void quitarlibro();
 void agregarlibro();
 void AgregarL();
 void librosobtenidos();
-void quitarlibro();
-void QuitarL();
 #endif // F
