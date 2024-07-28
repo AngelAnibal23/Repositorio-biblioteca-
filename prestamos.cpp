@@ -104,9 +104,10 @@ void devolverLibro(int& cantidad, int buscarID){
 	 		registrar_usuario[cantidad_de_usuarios-1].prestamos[i]=registrar_usuario[cantidad_de_usuarios-1].prestamos[i+1];
 	 		
 	 		cout<<"EL LIBRO FUE DEVUELTO SATISFACTORIAMENTE!"<<endl; 
+	 		cantidad--; 
 	 	}
 	 }
-	 cantidad--; 
+	 
 }
 
 
