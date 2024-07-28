@@ -52,7 +52,7 @@ void Menu_Administrador(){
 			
 	    }
 		if(resp==3){
-	       //menuPrestamos(libros); 
+	    AgregarL(); //menuPrestamos(libros); 
 		}
 
 	}while(resp!=0);
@@ -162,3 +162,28 @@ void Menu_Mostrar(){
 }
 
 
+void AgregarL(){
+			
+	Logo();
+	cout<<"\t\t\t\t\t\t\t_________________MENU INVENTARIO_________________"<<endl;
+	cout<<"\t\t\t\t\t\t\t|\t\t                  \t\t|"; 
+	cout<<endl<<"\t\t\t\t\t\t\t|\t\t1.- Comunicacion. \t\t|"<<endl;
+	cout<<"\t\t\t\t\t\t\t|\t\t                  \t\t|";
+	cout<<endl<<"\t\t\t\t\t\t\t|\t\t2.- Matematica.   \t\t|"<<endl;
+	cout<<"\t\t\t\t\t\t\t|\t\t                  \t\t|";
+	cout<<endl<<"\t\t\t\t\t\t\t|\t\t3.- Programacion. \t\t|"<<endl;
+	cout<<"\t\t\t\t\t\t\t|\t\t                  \t\t|";
+	cout<<endl<<"\t\t\t\t\t\t\t|\t\t4.- Quimica.      \t\t|"<<endl;
+	cout<<"\t\t\t\t\t\t\t|\t\t                  \t\t|";
+	cout<<endl<<"\t\t\t\t\t\t\t|\t\t5.- Historia.     \t\t|"<<endl;
+	cout<<"\t\t\t\t\t\t\t|\t\t                  \t\t|";
+	cout<<endl<<"\t\t\t\t\t\t\t|\t\t0.- Salir.        \t\t|"<<endl;
+	cout<<"\t\t\t\t\t\t\t|\t\t                  \t\t|";
+	cout<<endl<<"\t\t\t\t\t\t\t|_______________________________________________|"<<endl;;
+	cout<<endl<<"\t\t\t\t\t\t\t\t \tIngrese la respuesta: ";
+	
+	agregarlibro();
+	
+	system("PAUSE");
+	system("cls");
+}
