@@ -137,6 +137,46 @@ void poner_mayuscula(T REG[], int i){//COLOCA MAYUSCULA A LAS LETRAS INICIALES D
 	}
 	
 }
+template<typename T>
+void solicitarEntradaNoVacia(T REG[],int i ) {
+    
+    do {
+        if (REG[i].NOMBRE.empty()) {
+            cout << "\t\t\t\t\t\t\tIngrese un nombre:" ; 
+            getline(cin, REG[i].NOMBRE );
+        }else{
+        	break;
+		}
+    } while(true) ;
+    
+}
+template<typename T>
+void solicitarEntradaNoVaciaAP(T REG[],int i ) {
+    
+    do {
+        if (REG[i].APELLIDO_PAT.empty()) {
+            cout << "\t\t\t\t\t\t\tIngrese su apellido:" ;
+            getline(cin, REG[i].APELLIDO_PAT );
+        }else{
+        	break;
+		}
+    } while(true) ;
+    
+}
+template<typename T>
+void solicitarEntradaNoVaciaAM(T REG[],int i ) {
+    
+    do {
+        if (REG[i].APELLIDO_MAT.empty()) {
+            cout << "\t\t\t\t\t\t\tIngrese su apellido:" ;
+            getline(cin, REG[i].APELLIDO_MAT );
+        }else{
+        	break;
+		}
+    } while(true) ;
+    
+}
+
 //FUNCION DE REGISTRAR USUARIOS
 
 
