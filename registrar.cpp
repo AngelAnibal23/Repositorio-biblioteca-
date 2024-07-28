@@ -14,28 +14,31 @@ void Registrar_usuario(Registro_usuario REG[],int &cant_usu){
 		fflush(stdin);
 		cout<<"\t\t\t\t\t\t\t\tNOMBRES: ";
 		getline(cin, REG[i].NOMBRE);
+		solicitarEntradaNoVacia(REG,i);
 		cout<<"\t\t\t\t\t\t\t\tAPELLIDO PATERNO: ";
 		getline(cin, REG[i].APELLIDO_PAT);
+		solicitarEntradaNoVaciaAP(REG,i );
 		cout<<"\t\t\t\t\t\t\t\tAPELLIDO MATERNO: ";
 		getline(cin, REG[i].APELLIDO_MAT);
+		solicitarEntradaNoVaciaAM(REG, i );
 		cout<<"\t\t\t\t\t\t\t\tSEXO(H/M): ";
 		getline(cin, REG[i].SEXO);
-		validar_sexo(REG,i);
+		///validar_sexo(REG,i);
 		cout<<" \t\t\t\t\t\t\t\tEDAD: ";
 		getline(cin, REG[i].EDAD);
-		validar_edad(REG,i);
+		//validar_edad(REG,i);
 		cout<<"\t\t\t\t\t\t\t\tDNI: ";
 		getline(cin, REG[i].DNI);
-		validar_dni(REG,i);
+		//validar_dni(REG,i);
 		cout<<"\t\t\t\t\t\t\t\tCODIGO UNIVERSITARIO: ";
 		getline(cin, REG[i].CODIGO);
-		validar_codigo(REG,i);
+		//validar_codigo(REG,i);
 		cout<<"\t\t\t\t\t\t\t\tTELEFONO: ";
 		getline(cin, REG[i].TELEFONO);
-		validar_telefono(REG,i);
+		//validar_telefono(REG,i);
 		cout<<"\t\t\t\t\t\t\t\tEMAIL: ";
 		getline(cin, REG[i].EMAIL);
-		validar_email(REG,i);
+		//validar_email(REG,i);
 		
 		
 		poner_mayuscula(REG,i);
@@ -58,10 +61,13 @@ void Registrar_admin(Registro_Administrador REG[],int &cant_admin){
 		fflush(stdin);
 		cout<<"\t\t\t\t\t\t\t\tNOMBRES: ";
 		getline(cin, REG[i].NOMBRE);
+		solicitarEntradaNoVacia(REG,i);
 		cout<<"\t\t\t\t\t\t\t\tAPELLIDO PATERNO: ";
 		getline(cin, REG[i].APELLIDO_PAT);
+		solicitarEntradaNoVaciaAP(REG,i );
 		cout<<"\t\t\t\t\t\t\t\tAPELLIDO MATERNO: ";
 		getline(cin, REG[i].APELLIDO_MAT);
+		solicitarEntradaNoVaciaAM(REG, i );
 		cout<<"\t\t\t\t\t\t\t\tSEXO(H/M): ";
 		getline(cin, REG[i].SEXO);
 		validar_sexo(REG,i);
@@ -99,7 +105,7 @@ void Mostrar_usuarios_administradores(Registro_Administrador RE[], Registro_usua
 	cout<<"\t\t\t\t\t\t\tUSUARIOS REGISTRADOS:"<<endl;
 	for(int i=0;i<cantidad_de_usuarios;i++){
 		cout<<"\t\t\t\t\t\t\t"<<i+1<<".- "<<REU[i].NOMBRE<<" "<<REU[i].APELLIDO_PAT<<" "<<REU[i].APELLIDO_MAT<<endl;
-		cout<<"\t\t\t\t\t\t\t  SEXO:"<<REU[i].SEXO<<"   EDAD:"<<REU[i].EDAD<<endl<<REU[i].prestamos[i].nombre_libro;
+		cout<<"\t\t\t\t\t\t\t  SEXO:"<<REU[i].SEXO<<"   EDAD:"<<REU[i].EDAD<<endl<<REU[i].prestamos[i].nombre_libro;//<<REU[i];
 	}
 	system("PAUSE");
 	system("cls");
