@@ -39,6 +39,8 @@ void Menu_Administrador(){
 			cout<<"\t\t\t\t\t\t|\t\t                                 \t\t|";
 			cout<<endl<<"\t\t\t\t\t\t|\t\t4.- Quitar libros.               \t\t|"<<endl;
 			cout<<"\t\t\t\t\t\t|\t\t                                 \t\t|";
+			cout<<endl<<"\t\t\t\t\t\t|\t\t5.- Prestamos en curso.          \t\t|"<<endl;
+			cout<<"\t\t\t\t\t\t|\t\t                                 \t\t|";
 			cout<<endl<<"\t\t\t\t\t\t|\t\t0.- Volver al menu principal.    \t\t|"<<endl;
 			cout<<"\t\t\t\t\t\t|\t\t                                 \t\t|";
 			cout<<endl<<"\t\t\t\t\t\t|_______________________________________________________________|"<<endl;;
@@ -59,6 +61,10 @@ void Menu_Administrador(){
 		if(resp==4){
 			QuitarL();
 		}
+		if(resp == 5){
+         mostrar_prestamos_activos_admin(cantidad_de_usuarios, registrar_usuario);
+        }
+
 
 	}while(resp!=0);
 
