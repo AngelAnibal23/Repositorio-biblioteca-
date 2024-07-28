@@ -1,6 +1,9 @@
 #include <string>
 #include <cstdlib>
 #include "valida.h"
+#include "biblioteca.h"
+#include "funciones.h"
+
 using namespace std;
 
 //FUNCION DE REGISTRAR USUARIOS
