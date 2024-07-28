@@ -44,7 +44,7 @@ void registrarPrestamo(int& indice, const Book& libro, int dias_prestamo, int bu
         
         indice++;
     } else {
-        cout << "El historial de prestamos esta lleno." << endl;
+        cout << "\t\t\t\t\t\t\tEl historial de prestamos esta lleno." << endl;
     }
 }
 
@@ -53,8 +53,8 @@ void prestamoLibro(Book libros[], int cantidad, int buscarID, int& indicePrestam
 
     for (int i = 0; i < cantidad; ++i) {
         if (libros[i].id == buscarID) {
-            cout << "Libro: " << libros[i].nombre << endl;
-            cout << "Digite los dias de adquisicion (maximo 5 dias): ";
+            cout << "\t\t\t\t\t\t\tLibro: " << libros[i].nombre << endl;
+            cout << "\t\t\t\t\t\t\tDigite los dias de adquisicion (maximo 5 dias): ";
             
             int tiempo;
             while (true) {
@@ -63,7 +63,7 @@ void prestamoLibro(Book libros[], int cantidad, int buscarID, int& indicePrestam
                 if (cin.fail() || tiempo < 1 || tiempo > 5) {
                     cin.clear();
                     cin.ignore(10000, '\n');
-                    cout << "La cantidad de dias debe estar entre 1 y 5. Intente de nuevo: ";
+                    cout << "\t\t\t\t\t\t\tLa cantidad de dias debe estar entre 1 y 5. Intente de nuevo: ";
                 } else {
                     break;
                 }
@@ -71,8 +71,8 @@ void prestamoLibro(Book libros[], int cantidad, int buscarID, int& indicePrestam
 
             string fechaHora = obtenerFechaHoraActual();
             string fechaDevolucion = obtenerFechaDevolucion(tiempo);
-            cout << "El libro se entrego en la fecha: " << endl << fechaHora << endl;
-            cout << "Se espera que sea devuelto antes de: " << endl << fechaDevolucion << endl;
+            cout << "\t\t\t\t\t\t\tEl libro se entrego en la fecha: " << fechaHora << endl;
+            cout << "\t\t\t\t\t\t\tSe espera que sea devuelto antes de: "<< fechaDevolucion << endl;
 
             registrarPrestamo(indicePrestamos, libros[i], tiempo, buscarID);
 
@@ -82,19 +82,21 @@ void prestamoLibro(Book libros[], int cantidad, int buscarID, int& indicePrestam
     }
 
     if (!confirmacion) {
-        cout << "\nEl ID ingresado no corresponde a ningun libro." << endl;
+        cout << "\n\t\t\t\t\t\t\tEl ID ingresado no corresponde a ningun libro." << endl;
     }
 }
 
 void mostrarHistorial( int cantidad) {
-    cout << "\nHistorial de Prestamos:\n";
+	Logo();
+    cout << "\n\t\t\t\t\t\t\tHistorial de Prestamos:\n"<<endl;
     for (int i = 0; i < cantidad; ++i) {
-        cout << "Libro: " << registrar_usuario[cantidad_de_usuarios-1].prestamos[i].nombre_libro << endl;
-        cout << "ID del libro: "<<registrar_usuario[cantidad_de_usuarios-1].prestamos[i].id_prestamo << endl; 
-        cout << "Fecha de Prestamo: " << registrar_usuario[cantidad_de_usuarios-1].prestamos[i].fecha_entrega << endl;
-        cout << "Fecha de Devolucion: " << registrar_usuario[cantidad_de_usuarios-1].prestamos[i].fecha_devolucion << endl;
-        cout << "--------------------------\n";
+        cout << "\t\t\t\t\t\t\tLibro: " << registrar_usuario[cantidad_de_usuarios-1].prestamos[i].nombre_libro << endl;
+        cout << "\t\t\t\t\t\t\tID del libro: "<<registrar_usuario[cantidad_de_usuarios-1].prestamos[i].id_prestamo << endl; 
+        cout << "\t\t\t\t\t\t\tFecha de Prestamo: " << registrar_usuario[cantidad_de_usuarios-1].prestamos[i].fecha_entrega << endl;
+        cout << "\t\t\t\t\t\t\tFecha de Devolucion: " << registrar_usuario[cantidad_de_usuarios-1].prestamos[i].fecha_devolucion << endl;
+        cout << "\t\t\t\t\t\t\t--------------------------\n";
     }
+    system("PAUSE");
 }
 
 
@@ -103,11 +105,11 @@ void devolverLibro(int& cantidad, int buscarID){
 	 	if(buscarID == registrar_usuario[cantidad_de_usuarios-1].prestamos[i].id_prestamo){
 	 		registrar_usuario[cantidad_de_usuarios-1].prestamos[i]=registrar_usuario[cantidad_de_usuarios-1].prestamos[i+1];
 	 		
-	 		cout<<"EL LIBRO FUE DEVUELTO SATISFACTORIAMENTE!"<<endl; 
+	 		cout<<"\t\t\t\t\t\t\tEL LIBRO FUE DEVUELTO SATISFACTORIAMENTE!"<<endl; 
 	 		cantidad--; 
 	 	}
 	 }
-	 
+	system("PAUSE"); 
 }
 
 
@@ -126,7 +128,7 @@ void menuPrestamos(Book libros[]){
 		cout<<"\t\t\t\t\t\t\t|\t\t                      \t\t|";
 		cout<<endl<<"\t\t\t\t\t\t\t|\t2.- Historial de prestamos. \t\t|"<<endl;
 		cout<<"\t\t\t\t\t\t\t|\t\t                      \t\t|";
-		cout<<endl<<"\t\t\t\t\t\t\t|\t3.- Devolver libro. \t\t|"<<endl;
+		cout<<endl<<"\t\t\t\t\t\t\t|\t3.- Devolver libro.         \t\t|"<<endl;
 		cout<<"\t\t\t\t\t\t\t|\t\t                      \t\t|";
 		cout<<endl<<"\t\t\t\t\t\t\t|\t0.- Salir.                  \t\t|"<<endl;
 		cout<<"\t\t\t\t\t\t\t|\t\t                      \t\t|";
@@ -158,23 +160,18 @@ void menuPrestamos(Book libros[]){
             	break;
             }
             case 0: {
-                cout << "\t\t\t\t\t\t\tSaliendo." << endl;
                 break;
             }
             default: {
                 cout << "\t\t\t\t\t\t\tOpcion invalida, por favor intente de nuevo." << endl;
                 break;
             }
-           // system("cls"); 
+           
         }
-        system("PAUSE"); 
+        
         system("cls"); 
     } while (opcion != 0);
 	
-	
-	cout<<endl;
-	system("PAUSE");
-	cout<<endl;
 
 	system("cls");
 }
@@ -195,21 +192,21 @@ void valida(int &entrada){
 
 
 void mostrar_prestamos_activos_admin(int cantidad_usuarios, Registro_usuario usuarios[]) {
-    cout << "\nPrestamos Activos:\n";
+    cout << "\n\t\t\t\t\t\t\tPrestamos Activos:\n";
     for (int i = 0; i < cantidad_usuarios; ++i) {
-        cout << "Usuario: " << usuarios[i].NOMBRE << " " << usuarios[i].APELLIDO_PAT << " " << usuarios[i].APELLIDO_MAT << endl;
-        cout << "Email: " << usuarios[i].EMAIL << endl;
-        cout << "Telefono: " << usuarios[i].TELEFONO << endl;
-        cout << "DNI: " << usuarios[i].DNI << endl;
+        cout << "\t\t\t\t\t\t\tUsuario: " << usuarios[i].NOMBRE << " " << usuarios[i].APELLIDO_PAT << " " << usuarios[i].APELLIDO_MAT << endl;
+        cout << "\t\t\t\t\t\t\tEmail: " << usuarios[i].EMAIL << endl;
+        cout << "\t\t\t\t\t\t\tTelefono: " << usuarios[i].TELEFONO << endl;
+        cout << "\t\t\t\t\t\t\tDNI: " << usuarios[i].DNI << endl;
         
         for (int j = 0; j < cantidadPrestamos; ++j) {
             if (!usuarios[i].prestamos[j].nombre_libro.empty()) {
-                cout << "  - Libro: " << usuarios[i].prestamos[j].nombre_libro << endl;
-                cout << "    Fecha de Prestamo: " << usuarios[i].prestamos[j].fecha_entrega << endl;
-                cout << "    Fecha de Devolucion: " << usuarios[i].prestamos[j].fecha_devolucion << endl;
+                cout << "\t\t\t\t\t\t\t  - Libro: " << usuarios[i].prestamos[j].nombre_libro << endl;
+                cout << "\t\t\t\t\t\t\t   Fecha de Prestamo: " << usuarios[i].prestamos[j].fecha_entrega << endl;
+                cout << "\t\t\t\t\t\t\t   Fecha de Devolucion: " << usuarios[i].prestamos[j].fecha_devolucion << endl;
             }
         }
-        cout << "----------------------------------------------------\n";
+        cout << "\t\t\t\t\t\t\t----------------------------------------------------\n";
     }
     system("PAUSE"); 
     system("cls"); 

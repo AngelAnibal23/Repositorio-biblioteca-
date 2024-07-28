@@ -119,7 +119,47 @@ void Registrar_admin(Registro_Administrador REG[], int &cant_admin) {
 
     system("cls"); // Limpia la pantalla para volver al menú
 }
+void Mostrar_registros(Registro_Administrador RE[], Registro_usuario REU[],int cantidad_de_administradores,int cantidad_de_usuarios){
+	int resp;
+	do{
 
+	Logo();
+		cout<<"\t\t\t\t\t\t_______________________MOSTRAR DATOS_____________________"<<endl;
+		cout<<"\t\t\t\t\t\t|\t\t                              \t\t|"; 
+		cout<<endl<<"\t\t\t\t\t\t|\t1.- Mostrar usuarios ordenados por email.      \t|"<<endl;
+		cout<<"\t\t\t\t\t\t|\t\t                              \t\t|";
+		cout<<endl<<"\t\t\t\t\t\t|\t2.- Mostrar listado general de usuarios.       \t|"<<endl;
+		cout<<"\t\t\t\t\t\t|\t\t                              \t\t|";
+		cout<<endl<<"\t\t\t\t\t\t|\t3.- Mostrar listado general de Administradores \t|"<<endl;
+		cout<<"\t\t\t\t\t\t|\t\t                              \t\t|";
+		cout<<endl<<"\t\t\t\t\t\t|\t0.- Salir.                                     \t|"<<endl;
+		cout<<"\t\t\t\t\t\t|\t\t                              \t\t|";
+		cout<<endl<<"\t\t\t\t\t\t|_______________________________________________________|"<<endl;;
+		cout<<endl<<"\t\t\t\t\t\t\t\t \tIngrese la respuesta: ";
+		valida(resp);
+		system("cls");
+		if(resp==1){
+			Logo();
+			cout<<"\t\t\t\t\t\t\tUSUARIOS: "<<endl;
+			mostrar_orden_gmail(REU,cantidad_de_usuarios );
+			cout<<"\t\t\t\t\t\t\tADMINISTRADORES: "<<endl;
+			mostrar_orden_gmail(RE,cantidad_de_administradores );
+			system("cls");
+		}else if(resp==2){
+			Logo();
+			cout<<"\t\t\t\t\t\t\tUSUARIOS: "<<endl;
+			mostra_general(REU,cantidad_de_usuarios );
+			system("cls");
+		}else if(resp==3){
+			Logo();
+			cout<<"\t\t\t\t\t\t\tADMINISTRADORES: "<<endl;
+			mostra_general(RE,cantidad_de_administradores);
+			system("cls");
+		}
+	
+	}while(resp!=0);
+	system("cls");
+}
 //FUNCION DE MOSTRAR USUARIOS Y ADMINISTRADORES REGISTRADOS
 void Mostrar_usuarios_administradores(Registro_Administrador RE[], Registro_usuario REU[]) {
     Logo(); // Muestra el logotipo
@@ -151,4 +191,6 @@ void Mostrar_usuarios_administradores(Registro_Administrador RE[], Registro_usua
     system("PAUSE"); // Pausa el sistema para que el usuario lea la informacion
     system("cls"); // Limpia la pantalla para volver al menu
 }
+
+
 

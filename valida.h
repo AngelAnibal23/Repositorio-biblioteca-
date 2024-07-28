@@ -7,43 +7,8 @@
 #include <cstdlib>
 
 using namespace std;
+
 template<typename T>
-void validar_codigo(T REG[], int i) {
-    
-    // Los primeros cuatro dígitos deben estar entre 2000 y 2024, seguido de un guion y seis dígitos.
-
-    while(true) { // Bucle infinito que continúa hasta que se ingrese un código válido.
-
-        int j = 0; // para recorrer los caracteres del código.
-
-        // Verificar que el primer carácter sea '2'.
-        if (REG[i].CODIGO[j] == '2') {
-            j++;
-        }
-
-        // Verificar que el segundo carácter sea '0'.
-        if (REG[i].CODIGO[j] == '0') {
-            j++;
-        }
-
-        // Verificar que el tercer carácter sea '0' o '1' o '2'.
-        if (REG[i].CODIGO[j] == '0' || REG[i].CODIGO[j] == '1' || REG[i].CODIGO[j] == '2') {
-            j++;
-        }
-
-        // Verificar que el cuarto carácter sea '0', '1', '2', '3', o '4'.
-        if (REG[i].CODIGO[j] == '0' || REG[i].CODIGO[j] == '1' || REG[i].CODIGO[j] == '2' || REG[i].CODIGO[j] == '3' || REG[i].CODIGO[j] == '4') {
-            j++;
-        }
-
-        // Verificar que el siguiente carácter sea un guion '-'.
-        if (REG[i].CODIGO[j] == '-') {
-            j++;
-        }
-
-        // Verificar que los siguientes seis caracteres sean dígitos.
-        for (int k = 0; k < 6; k++) {
-            j++; template<typename T>
 void validar_codigo(T REG[], int i) {
     // Función para validar el código en el formato YYYY-NNNNNN.
     // Los primeros cuatro dígitos deben estar entre 2000 y 2024, seguido de un guion y seis dígitos.
@@ -93,19 +58,8 @@ void validar_codigo(T REG[], int i) {
         }
     }
 }
-        }
+        
 
-        // Si el índice j es menor que 10, el código no es válido.
-        // Solicitar una nueva entrada.
-        if (j < 10) {
-            fflush(stdin); // Limpiar el búfer de entrada 
-            cout << "\t\t\t\t\t\t\t Error, Intente nuevamente: ";
-            getline(cin, REG[i].CODIGO);
-        } else {
-            break; // Salir del bucle si el código es válido.
-        }
-    }
-}
 template<typename T>
 void validar_sexo(T REG[], int i) {
     // Función para validar la entrada del sexo. Debe ser 'H' para Hombre o 'M' para Mujer.
@@ -293,8 +247,80 @@ void solicitarEntradaNoVaciaAM(T REG[], int i) {
         }
     } while(true);
 }
-
-
-
+template<typename T>
+void mostrar_orden_gmail(T RE[],int cnt_cont){
+	
+	if(cnt_cont==0){
+		cout<<endl<<"\t\t\t\t\t\t\tVacio."<<endl;
+	}
+	int i,j,m,l,k,n;
+	for(i=0;i<cnt_cont-1;i++){
+		for(j=0;RE[i].EMAIL[j]!='@';j++){
+				
+			}
+		for(l=i+1;l<cnt_cont;l++){
+		
+			for(k=0;RE[l].EMAIL[k]!='@';k++){
+				
+			}
+			
+			if(RE[i].EMAIL[j+1]>RE[l].EMAIL[k+1]){
+				string aux;
+				aux=RE[i].EMAIL;
+				RE[i].EMAIL=RE[l].EMAIL;
+				RE[l].EMAIL=aux;
+			
+				
+				
+			}
+		}
+	}
+		
+	
+	for(m=0; m<cnt_cont;m++ ){
+	cout<<"\t\t\t\t\t\t\tEmail "<<m+1<<": "<<RE[m].EMAIL<<endl;
+	}
+	
+	cout<<endl;
+	system("PAUSE");
+	
+}
+template<typename T>
+void mostra_general(T CE[],int cnt_cont){
+	
+	cout<<"\t\t\t\t\t\t\t-------LISTA GENERAL-----"<<endl;
+	int num_cont;
+	
+	for(int i=0; i<cnt_cont;i++ ){
+		
+	cout<<"\t\t\t\t\t\t\tPERSONA "<<i+1<<": "<<CE[i].NOMBRE<<endl;
+	}
+	if(cnt_cont==0){
+		cout<<"\t\t\t\t\t\t\tLista vacia.";
+	}else{
+		cout<<"\t\t\t\t\t\t\tPARA MAS INFORMACION INGRESE EL NUMERO DE LISTA:";
+		cin>>num_cont;
+		int i=0;
+	while(true){
+		if(i==num_cont){
+			cout<<"\t\t\t\t\t\t\t-----DATOS------"<<endl;
+			cout<<"\t\t\t\t\t\t\tNombre: "<<CE[i-1].NOMBRE<<" "<<CE[i-1].APELLIDO_PAT<<" "<<CE[i-1].APELLIDO_MAT<<endl;
+			cout<<"\t\t\t\t\t\t\tSexo: "<<CE[i-1].SEXO<<endl;
+			cout<<"\t\t\t\t\t\t\tEdad: "<<CE[i-1].EDAD<<endl;
+			cout<<"\t\t\t\t\t\t\tTelefono: "<<CE[i-1].TELEFONO<<endl;
+			cout<<"\t\t\t\t\t\t\tEmail: "<<CE[i-1].EMAIL<<endl;
+			cout<<"\t\t\t\t\t\t\tDni: "<<CE[i-1].DNI<<endl;
+			
+			break ;
+		}
+		i++;
+	}
+	}
+	
+	
+	cout<<endl;
+	system("PAUSE");
+	
+}
 
 #endif

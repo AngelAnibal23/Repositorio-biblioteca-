@@ -36,4 +36,5 @@ void agregarlibro();
 void AgregarL();
 void librosobtenidos();
 void mostrar_prestamos_activos_admin(int cantidad_usuarios, Registro_usuario usuarios[]);
+void Mostrar_registros(Registro_Administrador RE[], Registro_usuario REU[],int cantidad_de_administradores,int cantidad_de_usuarios);
 #endif // F
