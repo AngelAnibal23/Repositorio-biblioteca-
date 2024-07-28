@@ -203,3 +203,26 @@ void valida(int &entrada){
         }
     }
 }
+
+
+void mostrar_prestamos_activos_admin(int cantidad_usuarios, Registro_usuario usuarios[]) {
+    cout << "\nPrestamos Activos:\n";
+    for (int i = 0; i < cantidad_usuarios; ++i) {
+        cout << "Usuario: " << usuarios[i].NOMBRE << " " << usuarios[i].APELLIDO_PAT << " " << usuarios[i].APELLIDO_MAT << endl;
+        cout << "Email: " << usuarios[i].EMAIL << endl;
+        cout << "Telefono: " << usuarios[i].TELEFONO << endl;
+        cout << "DNI: " << usuarios[i].DNI << endl;
+        
+        for (int j = 0; j < cantidadPrestamos; ++j) {
+            if (!usuarios[i].prestamos[j].nombre_libro.empty()) {
+                cout << "  - Libro: " << usuarios[i].prestamos[j].nombre_libro << endl;
+                cout << "    Fecha de Prestamo: " << usuarios[i].prestamos[j].fecha_entrega << endl;
+                cout << "    Fecha de Devolucion: " << usuarios[i].prestamos[j].fecha_devolucion << endl;
+            }
+        }
+        cout << "----------------------------------------------------\n";
+    }
+    system("PAUSE"); 
+    system("cls"); 
+}
+
