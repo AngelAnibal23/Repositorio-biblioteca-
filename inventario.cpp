@@ -13,23 +13,23 @@ comunicacion comu [10] = {   //muestra los datos ya almacenados de comunicacion
 };
 matematica mate [10] = {   //muestra los datos ya almacenados de matematica
 	{"Erwin Kreyszig",2007,1272,"Matematicas avanzadas para ingenieros", 104,3},
-	{"Granville, Smith y Longley",2012,960,"Calculo diferencial e integral", 103,2},
-	{"Serge Lang",1996,480,"Algebra Lineal", 105,2}
+	{"Granville, Smith y Longley",2012,960,"Calculo diferencial e integral", 105,2},
+	{"Serge Lang",1996,480,"Algebra Lineal", 106,2}
 };
 programacion progr [10] = {   //muestra los datos ya almacenados de programacion
-	{"Luis Torres",2018,520,"Introduccion a la Programacion con Python", 106,1},
-	{"Marta Sanchez",2017,480,"Programacion en Java para Universitarios", 107,2},
-	{"Jose Hernandez",2020,550,"Fundamentos de Programacion en C++", 108,3}
+	{"Luis Torres",2018,520,"Introduccion a la Programacion con Python", 107,1},
+	{"Marta Sanchez",2017,480,"Programacion en Java para Universitarios", 108,2},
+	{"Jose Hernandez",2020,550,"Fundamentos de Programacion en C++", 109,3}
 };
 quimica quimi [10] = {   //muestra los datos ya almacenados de quimica
-	{"Ricardo Morales",2016,700,"Quimica General: Principios y Aplicaciones Modernas", 109,1},
-	{"Ana Fernandez",2018,640,"Quimica Organica: Teoria y Practica",110,2},
-	{"Javier Gomez",2019,580,"Quimica Inorganica para Estudiantes Universitarios",111,1}
+	{"Ricardo Morales",2016,700,"Quimica General: Principios y Aplicaciones Modernas", 110,1},
+	{"Ana Fernandez",2018,640,"Quimica Organica: Teoria y Practica",111,2},
+	{"Javier Gomez",2019,580,"Quimica Inorganica para Estudiantes Universitarios",112,1}
 };
 historia hist [10] = {   //muestra los datos ya almacenados de historia
-	{"Laura Rodriguez",2015,720,"Historia Contemporanea: Desde la Revolucion Francesa hasta la Globalizacion",112,2},
-	{"Miguel Alvarez",2017,650,"Historia de America Latina: Colonizacion y Desarrollo",113,1},
-	{"Carmen Sanchez",2020,600,"Historia de Espania: Desde los Visigodos hasta la Democracia",114,1}
+	{"Laura Rodriguez",2015,720,"Historia Contemporanea: Desde la Revolucion Francesa hasta la Globalizacion",113,2},
+	{"Miguel Alvarez",2017,650,"Historia de America Latina: Colonizacion y Desarrollo",114,1},
+	{"Carmen Sanchez",2020,600,"Historia de Espania: Desde los Visigodos hasta la Democracia",115,1}
 };
 
 
