@@ -37,35 +37,35 @@ void mostrar(int numcateg){
 	Logo();
 	if(numcateg == 1) {   //muestra al usuario los datos del libro de comunicacion
     	for(int a = 0; a < 10; a++) {
-        	if(comu[a].ID1 != 0) {
+        	if(comu[a].cantidad1 > 0) {
          	   cout << "\t\t\t\t\tL" << a + 1 << "    ID: " << comu[a].ID1 << "   NOMBRE: " << comu[a].Nombre1 << endl << "\t\t\t\t\t\t\t         AUTOR: " ;
           	  cout << comu[a].Autor1 <<"   "<<  comu[a].Anio1 << "   PAG: " << comu[a].paginas1<< endl << "\t\t\t\t\t\t\t         CANT: " << comu[a].cantidad1 << endl;              
      	    }
    		}
 	} else if(numcateg == 2) {   //muestra al usuario los datos del libro de matematica
     	for(int a = 0; a < 10; a++) {
-       	 if(mate[a].ID2 != 0) {
+       	 if(mate[a].cantidad2 > 0) {
           	  cout << "\t\t\t\t\tL" << a + 1 << "    ID: " << mate[a].ID2 << "   NOMBRE: " << mate[a].Nombre2 << endl << "\t\t\t\t\t\t\t         AUTOR: ";
           	  cout << mate[a].Autor2 <<"   "<<  mate[a].Anio2 << "   PAG: " << mate[a].paginas2<<  endl<< "\t\t\t\t\t\t\t         CANT: " << mate[a].cantidad2 << endl;         
        		 }
     	}
 	} else if(numcateg == 3) {   //muestra al usuario los datos del libro de programacion
    	 	for(int a = 0; a < 10; a++) {
-        	if(progr[a].ID3 != 0) {
+        	if(progr[a].cantidad3 > 0) {
             	cout << "\t\t\t\t\tL" << a + 1  << "    ID: " << progr[a].ID3  << "   NOMBRE: " << progr[a].Nombre3 << endl << "\t\t\t\t\t\t\t         AUTOR: ";
 				cout << progr[a].Autor3 <<"   "<< progr[a].Anio3<< "   PAG: " << progr[a].paginas3<< endl << "\t\t\t\t\t\t\t         CANT: " << progr[a].cantidad3 << endl;           
       		  }
     	}
 	} else if(numcateg == 4) {   //muestra al usuario los datos del libro de quimica
     	for(int a = 0; a < 10; a++) {
-        	if(quimi[a].ID4 != 0) {
+        	if(quimi[a].cantidad4 > 0) {
           	  	cout << "\t\t\t\t\tL" << a + 1  << "    ID: " << quimi[a].ID4 << "   NOMBRE: " << quimi[a].Nombre4 << endl << "\t\t\t\t\t\t\t         AUTOR: ";
             	cout << quimi[a].Autor4 <<"   "<<  quimi[a].Anio4    << "   PAG: " << quimi[a].paginas4 << endl << "\t\t\t\t\t\t\t         CANT: " << quimi[a].cantidad4 << endl;        
         	}
     	}
 	} else if(numcateg == 5) {   //muestra al usuario los datos del libro de historia
     	for(int a = 0; a < 10; a++) {
-        	if(hist[a].ID5 != 0) {
+        	if(hist[a].cantidad5 > 0) {
             	cout << "\t\t\t\t\tL" << a + 1 << "    ID: " << hist[a].ID5 << "   NOMBRE: " << hist[a].Nombre5 << endl << "\t\t\t\t\t\t\t         AUTOR: " ;
             	cout  << hist[a].Autor5 <<"   "<<  hist[a].Anio5  << "   PAG: " << hist[a].paginas5   << endl << "\t\t\t\t\t\t\t         CANT: " << hist[a].cantidad5 << endl;      
         	}
@@ -193,4 +193,44 @@ void agregarlibro(){
 	}else if(numcateg == 0){
     	system("cls");
 	}
+}
+void quitarlibro(){
+	int numcateg;
+	cin>>numcateg;
+	system("cls");
+	int IDlibro;
+	mostrar(numcateg);
+	if(numcateg == 1) { 
+	  cout<<"\t\t\t\t\t\t\t\tescribe el ID : ";
+	  cin>>IDlibro;
+    	for(int a = 0; a < 10; a++){ 
+    		if(comu[a].ID1==IDlibro){
+    			comu[a].cantidad1--;
+			}
+		}
+	}else if(numcateg == 2) {   
+    	for(int a = 0; a < 10; a++) {
+       	    if(mate[a].ID2==IDlibro){
+    			mate[a].cantidad2--;
+			}
+    	}
+	}else if(numcateg == 3) {   
+	    for(int a = 0; a < 10; a++) {
+        	if(progr[a].ID3==IDlibro){
+    			progr[a].cantidad3--;
+			}
+		}
+	}else if(numcateg == 4) {   
+    	for(int a = 0; a < 10; a++) {
+        	if(quimi[a].ID4==IDlibro){
+    			quimi[a].cantidad4--;
+			}
+    	}
+	} else if(numcateg == 5) {  
+    	for(int a = 0; a < 10; a++) {
+    		if(hist[a].ID5==IDlibro){
+    			hist[a].cantidad5--;
+			}
+    	}
+    }
 }

@@ -30,4 +30,6 @@ void valida(int &entrada);
 void agregarlibro();
 void AgregarL();
 void librosobtenidos();
+void quitarlibro();
+void QuitarL();
 #endif // F
