@@ -121,7 +121,7 @@ void menuPrestamos(Book libros[]){
 		cout<<endl;
 		Logo();
 		cout<<"\t\t\t\t\t\t\t________________MENU DE PRESTAMOS________________"<<endl;
-		cout<<"\t\t\t\t\t\t\t|\t\t                      \t\t|"; //para centrar  5 \t ojo se trabaja con pantalla completa
+		cout<<"\t\t\t\t\t\t\t|\t\t                      \t\t|"; 
 		cout<<endl<<"\t\t\t\t\t\t\t|\t1.- Prestamo de algun libro.\t\t|"<<endl;
 		cout<<"\t\t\t\t\t\t\t|\t\t                      \t\t|";
 		cout<<endl<<"\t\t\t\t\t\t\t|\t2.- Historial de prestamos. \t\t|"<<endl;
@@ -134,19 +134,8 @@ void menuPrestamos(Book libros[]){
 		cout<<endl<<"\t\t\t\t\t\t\t\t \tIngrese la respuesta: ";
 
         
-
-        while (true) {
-            cin >> opcion;
-
-            // Verificar si la entrada es válida
-            if (cin.fail()) {
-                cin.clear(); // Limpiar el estado de error de cin
-                cin.ignore(10000, '\n'); // Ignorar la entrada incorrecta
-                cout << "\t\t\t\t\t\t\tOpcion invalida, por favor intente de nuevo: ";
-            } else {
-                break; // Salir del bucle si la entrada es válida
-            }
-        }
+		valida(opcion);
+        
         system("cls");
 
         switch (opcion) {
@@ -193,13 +182,13 @@ void valida(int &entrada){
 				
     while (true) {
         cin >> entrada;
-        // Verificar si la entrada es válida
+        // Verificar si la entrada es valida
         if (cin.fail()) {
         	cin.clear(); // Limpiar el estado de error de cin
         	cin.ignore(10000, '\n'); // Ignorar la entrada incorrecta
         	cout << "\t\t\t\t\t\t\t Existe algun error. Por favor intente de nuevo: ";
         } else {
-            break; // Salir del bucle si la entrada es válida
+            break; // Salir del bucle si la entrada es valida
         }
     }
 }
