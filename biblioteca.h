@@ -5,12 +5,12 @@
 using namespace std;
 
 struct Book {
-    int id; 
-    string nombre;
-    string autor;
-    int anio;
-    int paginas;
-    int cantidad;
+    int id;         // ID de los libros
+    string nombre;  //  Titulo de los libros 
+    string autor;   //   Nombre del autor 
+    int anio;      	//   Anio de publicacion 
+    int paginas;  	//   Paginas del libro 
+    int cantidad; 	//   Cantidad de libros disponibles
 };
 
 //ESTRUCTURAS DE LIBROS
@@ -57,10 +57,10 @@ struct historia{
 //ESTRUCTURAS DE REGISTRO DE DATOS PERSONALES
 //ESTRUCTURA QUE GUARDA DATOS DEL PRESTAMO DE UN LIBRO
 struct Prestamo {
-    string nombre_libro;
-    string fecha_entrega;
-    string fecha_devolucion;
-    int id_prestamo; 
+    string nombre_libro;       // Nombre del libro prestado 
+    string fecha_entrega;	   // Fecha de entrega del libro 
+    string fecha_devolucion;   // Fecha de devolucion del libro 
+    int id_prestamo; 		   // ID del libro prestado 
 };
 struct Registro_usuario{
 	string NOMBRE;
