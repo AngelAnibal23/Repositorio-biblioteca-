@@ -7,7 +7,7 @@
 #include <cstdlib>
 //VARIABLES GLOBALES
 extern const int cantidadLibros;
-extern Book libros[15];
+extern Book libros[50];
 extern int cantidad_de_usuarios; 
 extern int cantidad_de_administradores; 
 extern int indicePrestamos;
@@ -31,10 +31,10 @@ void Registrar_admin(Registro_Administrador REG[],int &cant_admin);
 void devolverLibro(int& cantidad, int buscarID); 
 void valida(int &entrada);
 void QuitarL();
-void Mostrar_admin(); 
-void mostrar_prestamos_activos_admin(int cantidad_usuarios, Registro_usuario usuarios[]);  // FUNCION QUE MUESTRA AL ADMINISTRADOR LOS PRESTAMOS ACTIVOS 
 void quitarlibro();
 void agregarlibro();
 void AgregarL();
 void librosobtenidos();
+void mostrar_prestamos_activos_admin(int cantidad_usuarios, Registro_usuario usuarios[]);
+void Mostrar_registros(Registro_Administrador RE[], Registro_usuario REU[],int cantidad_de_administradores,int cantidad_de_usuarios);
 #endif // F
