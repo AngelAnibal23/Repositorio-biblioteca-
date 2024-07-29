@@ -9,70 +9,72 @@
 using namespace std;
 
 template<typename T>
+
 void validar_codigo(T REG[], int i) {
-    // FunciÛn para validar el cÛdigo en el formato YYYY-NNNNNN.
+    // Funcion para validar el cÛdigo en el formato YYYY-NNNNNN.
     // Los primeros cuatro dÌgitos deben estar entre 2000 y 2024, seguido de un guion y seis dÌgitos.
 
-    while(true) { // Bucle infinito que contin˙a hasta que se ingrese un cÛdigo v·lido.
+    while(true) { // Bucle infinito que contin√∫a hasta que se ingrese un c√≥digo v√°lido.
 
-        int j = 0; // Õndice para recorrer los caracteres del cÛdigo.
+        int j = 0; // √çndice para recorrer los caracteres del codigo.
 
-        // Verificar que el primer car·cter sea '2'.
+        // Verificar que el primer caracter sea '2'.
         if (REG[i].CODIGO[j] == '2') {
             j++;
         }
 
-        // Verificar que el segundo car·cter sea '0'.
+        // Verificar que el segundo caracter sea '0'.
         if (REG[i].CODIGO[j] == '0') {
             j++;
         }
 
-        // Verificar que el tercer car·cter sea '0' o '1' o '2'.
+        // Verificar que el tercer caracter sea '0' o '1' o '2'.
         if (REG[i].CODIGO[j] == '0' || REG[i].CODIGO[j] == '1' || REG[i].CODIGO[j] == '2') {
             j++;
         }
 
-        // Verificar que el cuarto car·cter sea '0', '1', '2', '3', o '4'.
+        // Verificar que el cuarto caracter sea '0', '1', '2', '3', o '4'.
         if (REG[i].CODIGO[j] == '0' || REG[i].CODIGO[j] == '1' || REG[i].CODIGO[j] == '2' || REG[i].CODIGO[j] == '3' || REG[i].CODIGO[j] == '4') {
             j++;
         }
 
-        // Verificar que el siguiente car·cter sea un guion '-'.
+        // Verificar que el siguiente caracter sea un guion '-'.
         if (REG[i].CODIGO[j] == '-') {
             j++;
         }
 
-        // Verificar que los siguientes seis caracteres sean dÌgitos.
+        // Verificar que los siguientes seis caracteres sean digitos.
         for (int k = 0; k < 6; k++) {
-            j++; // Incrementar el Ìndice para cada dÌgito.
+            j++; // Incrementar el √≠ndice para cada digito.
+
         }
 
-        // Si el Ìndice j es menor que 10, el cÛdigo no es v·lido.
+        // Si el indice j es menor que 10, el codigo no es valido.
         // Solicitar una nueva entrada.
         if (j < 10) {
-            fflush(stdin); // Limpiar el b˙fer de entrada 
+            fflush(stdin); // Limpiar el bufer de entrada 
             cout << "\t\t\t\t\t\t\t Error, Intente nuevamente: ";
             getline(cin, REG[i].CODIGO);
         } else {
-            break; // Salir del bucle si el cÛdigo es v·lido.
+            break; // Salir del bucle si el codigo es valido.
         }
     }
 }
-        
+
 
 template<typename T>
 void validar_sexo(T REG[], int i) {
-    // FunciÛn para validar la entrada del sexo. Debe ser 'H' para Hombre o 'M' para Mujer.
+    // Funci√≥n para validar la entrada del sexo. Debe ser 'H' para Hombre o 'M' para Mujer.
 
-    int j = 0; // Õndice para verificar el primer car·cter del campo SEXO.
+    int j = 0; // √çndice para verificar el primer car√°cter del campo SEXO.
 
-    while(true) { // Bucle infinito que contin˙a hasta que se ingrese una entrada v·lida.
-        // Verifica si el car·cter es 'H' o 'M'.
+    while(true) { // Bucle infinito que contin√∫a hasta que se ingrese una entrada v√°lida.
+        // Verifica si el car√°cter es 'H' o 'M'.
         if (REG[i].SEXO[j] == 'H' || REG[i].SEXO[j] == 'M') {
-            break; // Sale del bucle si la entrada es v·lida.
+            break; // Sale del bucle si la entrada es v√°lida.
         } else {
             // Si la entrada no es valida, solicita una nueva entrada.
-            fflush(stdin); // Limpia el b˙fer de entrada
+            fflush(stdin); // Limpia el b√∫fer de entrada
             cout << "\t\t\t\t\t\t\t Error, Intente nuevamente: ";
             getline(cin, REG[i].SEXO); // Lee una nueva entrada 
         }
@@ -80,18 +82,18 @@ void validar_sexo(T REG[], int i) {
 }
 template<typename T>
 void validar_telefono(T REG[], int i) {
-    // FunciÛn para validar que el numero de TELEFONO contenga exactamente 9 dÌgitos numÈricos.
+    // Funci√≥n para validar que el numero de TELEFONO contenga exactamente 9 d√≠gitos num√©ricos.
 
-    int j; // Õndice para contar la longitud del numero de telÈfono.
+    int j; // √çndice para contar la longitud del numero de tel√©fono.
 
-    while(true) { // Bucle infinito que contin˙a hasta que se ingrese un numero de telÈfono v·lido.
+    while(true) { // Bucle infinito que contin√∫a hasta que se ingrese un numero de tel√©fono v√°lido.
         
         // Contar el numero de caracteres en el campo TELEFONO.
         for (j = 0; REG[i].TELEFONO[j] != '\0'; j++) {
-            // El bucle se ejecuta mientras no se alcance el car·cter nulo de fin de cadena.
+            // El bucle se ejecuta mientras no se alcance el car√°cter nulo de fin de cadena.
         }
 
-        // Verificar si el n˙mero de caracteres es igual a 9.
+        // Verificar si el n√∫mero de caracteres es igual a 9.
         if (j == 9) {
             break; // Sale del bucle si la longitud es exactamente 9.
         } else {
@@ -105,13 +107,13 @@ void validar_telefono(T REG[], int i) {
 
 template<typename T>
 void validar_email(T REG[], int i) {
-    // FunciÛn para validar que el campo EMAIL contenga al menos un car·cter '@'.
+    // Funci√≥n para validar que el campo EMAIL contenga al menos un car√°cter '@'.
 
-    int flag = 0; // Variable para indicar si se encontrÛ un '@' en la cadena.
+    int flag = 0; // Variable para indicar si se encontr√≥ un '@' en la cadena.
 
-    while(true) { // Bucle infinito que contin˙a hasta que se ingrese un email v·lido.
+    while(true) { // Bucle infinito que contin√∫a hasta que se ingrese un email v√°lido.
 
-        // Recorre la cadena en el campo EMAIL para buscar el car·cter '@'.
+        // Recorre la cadena en el campo EMAIL para buscar el car√°cter '@'.
         for (int j = 0; REG[i].EMAIL[j] != '\0'; j++) {
             if (REG[i].EMAIL[j] == '@') {
                 flag = 1; // Establece el flag si se encuentra un '@'.
@@ -119,12 +121,12 @@ void validar_email(T REG[], int i) {
             }    
         }
 
-        // Verifica si se encontrÛ un '@' en la cadena.
+        // Verifica si se encontr√≥ un '@' en la cadena.
         if (flag == 1) {
-            break; // Sale del bucle si se encontrÛ un '@'.
+            break; // Sale del bucle si se encontr√≥ un '@'.
         } else {
-            // Si no se encontrÛ '@', solicita una nueva entrada.
-            fflush(stdin); // Limpia el b˙fer de entrada 
+            // Si no se encontr√≥ '@', solicita una nueva entrada.
+            fflush(stdin); // Limpia el b√∫fer de entrada 
             cout << "\t\t\t\t\t\t\t Error, Intente nuevamente: ";
             getline(cin, REG[i].EMAIL); // Lee una nueva entrada para el campo EMAIL.
         }
@@ -133,22 +135,22 @@ void validar_email(T REG[], int i) {
 
 template<typename T>
 void validar_dni(T REG[], int i) {
-    // FunciÛn para validar que el campo DNI contenga exactamente 8 dÌgitos.
+    // Funci√≥n para validar que el campo DNI contenga exactamente 8 d√≠gitos.
 
-    int j; // Variable para contar el n˙mero de caracteres en DNI.
+    int j; // Variable para contar el n√∫mero de caracteres en DNI.
 
-    while(true) { // Bucle infinito que contin˙a hasta que se ingrese un DNI v·lido.
+    while(true) { // Bucle infinito que contin√∫a hasta que se ingrese un DNI v√°lido.
 
-        // Recorre la cadena en el campo DNI para contar el n˙mero de caracteres.
+        // Recorre la cadena en el campo DNI para contar el n√∫mero de caracteres.
         for (j = 0; REG[i].DNI[j] != '\0'; j++) {    
         }
 
-        // Verifica si el n˙mero de caracteres en DNI es exactamente 8.
+        // Verifica si el n√∫mero de caracteres en DNI es exactamente 8.
         if (j == 8) {
             break; // Sale del bucle si el DNI tiene exactamente 8 caracteres.
         } else {
             // Si el DNI no tiene exactamente 8 caracteres, solicita una nueva entrada.
-            fflush(stdin); // Limpia el b˙fer de entrada 
+            fflush(stdin); // Limpia el b√∫fer de entrada 
             cout << "\t\t\t\t\t\t\t Error, Intente nuevamente: ";
             getline(cin, REG[i].DNI); // Lee una nueva entrada para el campo DNI.
         }
@@ -157,22 +159,22 @@ void validar_dni(T REG[], int i) {
 
 template<typename T>
 void validar_edad(T REG[], int i) {
-    // FunciÛn para validar que el campo EDAD contenga un m·ximo de 3 dÌgitos.
+    // Funci√≥n para validar que el campo EDAD contenga un m√°ximo de 3 d√≠gitos.
 
-    int j; // Variable para contar el n˙mero de caracteres en EDAD.
+    int j; // Variable para contar el n√∫mero de caracteres en EDAD.
 
-    while(true) { // Bucle infinito que contin˙a hasta que se ingrese una edad v·lida.
+    while(true) { // Bucle infinito que contin√∫a hasta que se ingrese una edad v√°lida.
 
-        // Recorre la cadena en el campo EDAD para contar el n˙mero de caracteres.
+        // Recorre la cadena en el campo EDAD para contar el n√∫mero de caracteres.
         for (j = 0; REG[i].EDAD[j] != '\0'; j++) {    
         }
 
-        // Verifica si el n˙mero de caracteres en EDAD es de 3 o menos.
+        // Verifica si el n√∫mero de caracteres en EDAD es de 3 o menos.
         if (j <= 3) {
             break; // Sale del bucle si la edad tiene 3 o menos caracteres.
         } else {
-            // Si la edad tiene m·s de 3 caracteres, solicita una nueva entrada.
-            fflush(stdin); // Limpia el b˙fer de entrada 
+            // Si la edad tiene m√°s de 3 caracteres, solicita una nueva entrada.
+            fflush(stdin); // Limpia el b√∫fer de entrada 
             cout << "\t\t\t\t\t\t\t Error, Intente nuevamente: ";
             getline(cin, REG[i].EDAD); // Lee una nueva entrada para el campo EDAD.
         }
@@ -181,22 +183,22 @@ void validar_edad(T REG[], int i) {
 
 template<typename T>
 void poner_mayuscula(T REG[], int i) {
-    // FunciÛn para convertir la primera letra de nombres y apellidos a may˙scula.
+    // Funci√≥n para convertir la primera letra de nombres y apellidos a may√∫scula.
 
     int j = 0; // Variable para recorrer las cadenas de caracteres.
 
-    // Convierte la primera letra del nombre a may˙scula.
+    // Convierte la primera letra del nombre a may√∫scula.
     REG[i].NOMBRE[j] = toupper(REG[i].NOMBRE[j]);
 
-    // Convierte la primera letra del apellido paterno a may˙scula.
+    // Convierte la primera letra del apellido paterno a may√∫scula.
     REG[i].APELLIDO_PAT[j] = toupper(REG[i].APELLIDO_PAT[j]);
 
-    // Convierte la primera letra del apellido materno a may˙scula.
+    // Convierte la primera letra del apellido materno a may√∫scula.
     REG[i].APELLIDO_MAT[j] = toupper(REG[i].APELLIDO_MAT[j]);
 
-    // Recorre el nombre para convertir a may˙scula la primera letra de cada palabra.
+    // Recorre el nombre para convertir a may√∫scula la primera letra de cada palabra.
     for (j = 0; REG[i].NOMBRE[j] != '\0'; j++) {
-        // Si encuentra un espacio, convierte la letra siguiente a may˙scula.
+        // Si encuentra un espacio, convierte la letra siguiente a may√∫scula.
         if (REG[i].NOMBRE[j] == ' ') {
             REG[i].NOMBRE[j + 1] = toupper(REG[i].NOMBRE[j + 1]);
         }
@@ -205,9 +207,9 @@ void poner_mayuscula(T REG[], int i) {
 
 template<typename T>
 void solicitarEntradaNoVacia(T REG[], int i) {
-    // Solicita al usuario que ingrese un nombre si el campo est· vacÌo.
+    // Solicita al usuario que ingrese un nombre si el campo est√° vac√≠o.
     do {
-        // Si el campo NOMBRE est· vacÌo, solicita al usuario que ingrese un nombre.
+        // Si el campo NOMBRE est√° vac√≠o, solicita al usuario que ingrese un nombre.
         if (REG[i].NOMBRE.empty()) {
             cout << "\t\t\t\t\t\t\tIngrese un nombre:"; 
             getline(cin, REG[i].NOMBRE);
@@ -220,9 +222,9 @@ void solicitarEntradaNoVacia(T REG[], int i) {
 
 template<typename T>
 void solicitarEntradaNoVaciaAP(T REG[], int i) {
-    // Solicita al usuario que ingrese un apellido paterno si el campo est· vacÌo.
+    // Solicita al usuario que ingrese un apellido paterno si el campo est√° vac√≠o.
     do {
-        // Si el campo APELLIDO_PAT est· vacÌo, solicita al usuario que ingrese un apellido paterno.
+        // Si el campo APELLIDO_PAT est√° vac√≠o, solicita al usuario que ingrese un apellido paterno.
         if (REG[i].APELLIDO_PAT.empty()) {
             cout << "\t\t\t\t\t\t\tIngrese su apellido paterno:"; 
             getline(cin, REG[i].APELLIDO_PAT);
@@ -235,9 +237,9 @@ void solicitarEntradaNoVaciaAP(T REG[], int i) {
 
 template<typename T>
 void solicitarEntradaNoVaciaAM(T REG[], int i) {
-    // Solicita al usuario que ingrese un apellido materno si el campo est· vacÌo.
+    // Solicita al usuario que ingrese un apellido materno si el campo est√° vac√≠o.
     do {
-        // Si el campo APELLIDO_MAT est· vacÌo, solicita al usuario que ingrese un apellido materno.
+        // Si el campo APELLIDO_MAT est√° vac√≠o, solicita al usuario que ingrese un apellido materno.
         if (REG[i].APELLIDO_MAT.empty()) {
             cout << "\t\t\t\t\t\t\tIngrese su apellido materno:"; 
             getline(cin, REG[i].APELLIDO_MAT);

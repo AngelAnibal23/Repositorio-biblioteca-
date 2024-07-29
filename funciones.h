@@ -7,7 +7,7 @@
 #include <cstdlib>
 //VARIABLES GLOBALES
 extern const int cantidadLibros;
-extern Book libros[15];
+extern Book libros[50];
 extern int cantidad_de_usuarios; 
 extern int cantidad_de_administradores; 
 extern int indicePrestamos;
