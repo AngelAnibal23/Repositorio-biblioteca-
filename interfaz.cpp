@@ -78,7 +78,7 @@ void Menu_Principal() {
     int resp; // Variable para almacenar la respuesta del usuario
 
     do {
-        Logo(); // Llama a la función Logo para mostrar el logotipo
+        Logo(); // Llama a la función Logo para mostrar el logotipo 
         cout << "\t\t\t\t\t\t\t__________________MENU PRINCIPAL_________________" << endl;
         cout << "\t\t\t\t\t\t\t|\t\t                  \t\t|";
         cout << endl << "\t\t\t\t\t\t\t|\t\t1.- Usuario libre.\t\t|" << endl; 

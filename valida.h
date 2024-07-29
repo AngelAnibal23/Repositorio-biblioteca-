@@ -300,7 +300,7 @@ void mostra_general(T CE[],int cnt_cont){
 	if(cnt_cont==0){
 		cout<<"\t\t\t\t\t\t\tLista vacia.";
 	}else{
-		cout<<"\t\t\t\t\t\t\tPARA MAS INFORMACION INGRESE EL NUMERO DE LISTA:";
+		cout<<"\t\t\t\t\t\t\tPARA MAS INFORMACION INGRESEI EL NUMERO DE LSTA:";
 		cin>>num_cont;
 		int i=0;
 	while(true){

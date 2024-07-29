@@ -50,6 +50,7 @@ void registrarPrestamo(int& indice, const Book& libro, int dias_prestamo, int bu
     } else {
         cout << "\t\t\t\t\t\t\tEl historial de prestamos esta lleno." << endl;
     }
+    system("PAUSE");
 }
 
 
