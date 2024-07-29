@@ -119,35 +119,45 @@ void Registrar_admin(Registro_Administrador REG[], int &cant_admin) {
 
     system("cls"); // Limpia la pantalla para volver al menú
 }
+void Mostrar_registros(Registro_Administrador RE[], Registro_usuario REU[],int cantidad_de_administradores,int cantidad_de_usuarios){
+	int resp;
+	do{
 
-//FUNCION DE MOSTRAR USUARIOS Y ADMINISTRADORES REGISTRADOS
-void Mostrar_usuarios_administradores(Registro_Administrador RE[], Registro_usuario REU[]) {
-    Logo(); // Muestra el logotipo
-
-    // Muestra los administradores registrados
-    cout << "\t\t\t\t\t\t\tADMINISTRADORES REGISTRADOS:" << endl;
-    if (cantidad_de_administradores == 0) {
-        cout << endl << "\t\t\t\t\t\t\tLista vacia" << endl; // Mensaje si no hay administradores registrados
-    } else {
-        cout << endl;
-        for (int i = 0; i < cantidad_de_administradores; i++) {
-            cout << "\t\t\t\t\t\t\t" << i + 1 << ".- " << RE[i].NOMBRE << " " << RE[i].APELLIDO_PAT << " " << RE[i].APELLIDO_MAT << endl;
-            cout << "\t\t\t\t\t\t\t  SEXO:" << RE[i].SEXO << "   EDAD:" << RE[i].EDAD << endl;
-        }
-    }
-
-    // Muestra los usuarios registrados
-    cout << "\t\t\t\t\t\t\tUSUARIOS REGISTRADOS:" << endl;
-    if (cantidad_de_usuarios == 0) {
-        cout << endl << "\t\t\t\t\t\t\tLista vacia" << endl; // Mensaje si no hay usuarios registrados
-    } else {
-        cout << endl;
-        for (int i = 0; i < cantidad_de_usuarios; i++) {
-            cout << "\t\t\t\t\t\t\t" << i + 1 << ".- " << REU[i].NOMBRE << " " << REU[i].APELLIDO_PAT << " " << REU[i].APELLIDO_MAT << endl;
-            cout << "\t\t\t\t\t\t\t  SEXO:" << REU[i].SEXO << "   EDAD:" << REU[i].EDAD << endl;
-        }
-    }
-
-    system("PAUSE"); // Pausa el sistema para que el usuario lea la informacion
-    system("cls"); // Limpia la pantalla para volver al menu
+	Logo();
+		cout<<"\t\t\t\t\t\t_______________________MOSTRAR DATOS_____________________"<<endl;
+		cout<<"\t\t\t\t\t\t|\t\t                              \t\t|"; 
+		cout<<endl<<"\t\t\t\t\t\t|\t1.- Mostrar usuarios ordenados por email.      \t|"<<endl;
+		cout<<"\t\t\t\t\t\t|\t\t                              \t\t|";
+		cout<<endl<<"\t\t\t\t\t\t|\t2.- Mostrar listado general de usuarios.       \t|"<<endl;
+		cout<<"\t\t\t\t\t\t|\t\t                              \t\t|";
+		cout<<endl<<"\t\t\t\t\t\t|\t3.- Mostrar listado general de Administradores \t|"<<endl;
+		cout<<"\t\t\t\t\t\t|\t\t                              \t\t|";
+		cout<<endl<<"\t\t\t\t\t\t|\t0.- Salir.                                     \t|"<<endl;
+		cout<<"\t\t\t\t\t\t|\t\t                              \t\t|";
+		cout<<endl<<"\t\t\t\t\t\t|_______________________________________________________|"<<endl;;
+		cout<<endl<<"\t\t\t\t\t\t\t\t \tIngrese la respuesta: ";
+		valida(resp);
+		system("cls");
+		if(resp==1){
+			Logo();
+			cout<<"\t\t\t\t\t\t\tUSUARIOS: "<<endl;
+			mostrar_orden_gmail(REU,cantidad_de_usuarios );
+			cout<<"\t\t\t\t\t\t\tADMINISTRADORES: "<<endl;
+			mostrar_orden_gmail(RE,cantidad_de_administradores );
+			system("cls");
+		}else if(resp==2){
+			Logo();
+			cout<<"\t\t\t\t\t\t\tUSUARIOS: "<<endl;
+			mostra_general(REU,cantidad_de_usuarios );
+			system("cls");
+		}else if(resp==3){
+			Logo();
+			cout<<"\t\t\t\t\t\t\tADMINISTRADORES: "<<endl;
+			mostra_general(RE,cantidad_de_administradores);
+			system("cls");
+		}
+	
+	}while(resp!=0);
+	system("cls");
 }
+

@@ -55,7 +55,7 @@ void Menu_Administrador() {
             Registrar_admin(registrar_administrador, cantidad_de_administradores); // Redirige a una funcion para registrar un nuevo administrador
         }
         if (resp == 2) {
-            Mostrar_usuarios_administradores(registrar_administrador, registrar_usuario); // Muestra los usuarios y administradores registrados
+            Mostrar_registros(registrar_administrador, registrar_usuario,cantidad_de_administradores,cantidad_de_usuarios); // Muestra los usuarios y administradores registrados
         }
         if (resp == 3) {
             AgregarL(); // Llama a la funcion para agregar un libro
@@ -69,9 +69,7 @@ void Menu_Administrador() {
 
     } while (resp != 0); // Repite el menu hasta que el usuario elija salir (opcion 0)
 
-    cout << endl;
-    system("PAUSE"); // Pausa el sistema para que el usuario pueda ver la informacion mostrada
-    cout << endl;
+    
     system("cls"); // Limpia la pantalla antes de volver al menu principal
 }
 
@@ -112,6 +110,7 @@ void Menu_Usuario() {
     int retiene = 0; // Variable para verificar si el usuario ya está registrado
 
     do {
+
         Logo(); // Llamada a la función Logo para mostrar el logotipo
         cout << "\t\t\t\t\t\t__________________MENU DE USUARIO_________________________" << endl;
         cout << "\t\t\t\t\t\t|\t\t                              \t\t|";
@@ -123,7 +122,7 @@ void Menu_Usuario() {
         cout << "\t\t\t\t\t\t|\t\t                              \t\t|";
         cout << endl << "\t\t\t\t\t\t|\t\t0.- Volver al menu principal.\t\t|" << endl;
         cout << "\t\t\t\t\t\t|\t\t                              \t\t|";
-        cout << endl << "\t\t\t\t\t\t|____________________CU=" << cantidad_de_usuarios << retiene << indicePrestamos << "___________________________|" << endl;
+        cout << endl << "\t\t\t\t\t\t|_______________________________________________________|" << endl;
         cout << endl << "\t\t\t\t\t\t\t \tIngrese la respuesta: ";
         valida(resp); // Llamada a la funcion valida para obtener una respuesta válida del usuario
 
@@ -184,8 +183,6 @@ void Menu_Mostrar() {
     cout << endl << "\t\t\t\t\t\t\t|\t\t4.- Quimica.      \t\t|" << endl;
     cout << "\t\t\t\t\t\t\t|\t\t                  \t\t|"; 
     cout << endl << "\t\t\t\t\t\t\t|\t\t5.- Historia.     \t\t|" << endl;
-    cout << "\t\t\t\t\t\t\t|\t\t                  \t\t|"; 
-    cout << endl << "\t\t\t\t\t\t\t|\t\t0.- Salir.        \t\t|" << endl; 
     cout << "\t\t\t\t\t\t\t|\t\t                  \t\t|"; 
     cout << endl << "\t\t\t\t\t\t\t|_______________________________________________|" << endl; 
     cout << endl << "\t\t\t\t\t\t\t\t \tIngrese la respuesta: ";
