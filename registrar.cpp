@@ -40,7 +40,7 @@ void Registrar_usuario(Registro_usuario REG[], int &cant_usu) {
     getline(cin, REG[i].DNI);
     validar_dni(REG, i);
 
-    cout << "\t\t\t\t\t\t\t\tCODIGO UNIVERSITARIO: ";
+    cout << "\t\t\t\t\t\t\t\tCODIGO DE USUARIO: ";
     getline(cin, REG[i].CODIGO);
     validar_codigo(REG, i);
 

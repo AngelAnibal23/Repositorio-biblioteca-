@@ -219,7 +219,9 @@ void quitarlibro(){
 				}
 			}
 		}
-	}else if(numcateg == 2) {   
+	}else if(numcateg == 2) {
+		cout<<"\t\t\t\t\t\t\t\tescribe el ID : ";
+	  	cin>>IDlibro;   
     	for(int a = 0; a < 10; a++) {
        	    if(mate[a].ID2==IDlibro){
     			if(mate[a].cantidad2>0){
@@ -227,7 +229,9 @@ void quitarlibro(){
 				}
 			}
     	}
-	}else if(numcateg == 3) {   
+	}else if(numcateg == 3) { 
+		cout<<"\t\t\t\t\t\t\t\tescribe el ID : ";
+	  	cin>>IDlibro;  
 	    for(int a = 0; a < 10; a++) {
         	if(progr[a].ID3==IDlibro){
     			if(progr[a].cantidad3>0){
@@ -235,7 +239,9 @@ void quitarlibro(){
 				}
 			}
 		}
-	}else if(numcateg == 4) {   
+	}else if(numcateg == 4) {
+		cout<<"\t\t\t\t\t\t\t\tescribe el ID : ";
+	  	cin>>IDlibro;   
     	for(int a = 0; a < 10; a++) {
         	if(quimi[a].ID4==IDlibro){
     			if(quimi[a].ID4==IDlibro){
@@ -243,7 +249,9 @@ void quitarlibro(){
 				}
 			}
     	}
-	} else if(numcateg == 5) {  
+	} else if(numcateg == 5) { 
+		cout<<"\t\t\t\t\t\t\t\tescribe el ID : ";
+	 	cin>>IDlibro; 
     	for(int a = 0; a < 10; a++) {
     		if(hist[a].ID5==IDlibro){
     			if(hist[a].cantidad5>0){
