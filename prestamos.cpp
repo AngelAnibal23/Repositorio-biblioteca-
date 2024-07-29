@@ -10,6 +10,8 @@ using namespace std;
 const int cantidadPrestamos = 30;
 //Prestamo prestamos[cantidadPrestamos];
 int indicePrestamos = 0;
+
+//Funcion que obtiene la hora del sistema y la almacena en un arreglo. 
 string obtenerFechaHoraActual() {
     time_t tiempo_actual = time(NULL);
     tm* ahora_local = localtime(&tiempo_actual);
@@ -20,6 +22,7 @@ string obtenerFechaHoraActual() {
     return string(arreglo_hora);
 }
 
+//Funcion que convierte la hora de devolucion, con los dias de adquisicion en un arreglo 
 string obtenerFechaDevolucion(int dias_sumar) {
     time_t tiempo_actual = time(NULL);
     tm* ahora_local = localtime(&tiempo_actual);
@@ -34,6 +37,7 @@ string obtenerFechaDevolucion(int dias_sumar) {
     return string(devolucion);
 }
 
+// funcion que registra el prestamo, segun el ID del libro 
 void registrarPrestamo(int& indice, const Book& libro, int dias_prestamo, int buscarID) {
     if (indice < cantidadPrestamos) {
         
@@ -48,6 +52,8 @@ void registrarPrestamo(int& indice, const Book& libro, int dias_prestamo, int bu
     }
 }
 
+
+// Funcion que busca el ID ingresado con el usuario y lo compara con las estructuras definidas
 void prestamoLibro(Book libros[], int cantidad, int buscarID, int& indicePrestamos) {
     bool confirmacion = false;
 
@@ -59,7 +65,7 @@ void prestamoLibro(Book libros[], int cantidad, int buscarID, int& indicePrestam
             int tiempo;
             while (true) {
                 cin >> tiempo;
-
+				//Sistema de validacion para la adquisicion del libro
                 if (cin.fail() || tiempo < 1 || tiempo > 5) {
                     cin.clear();
                     cin.ignore(10000, '\n');
@@ -69,6 +75,7 @@ void prestamoLibro(Book libros[], int cantidad, int buscarID, int& indicePrestam
                 }
             }
 
+			//Almacenando la hora de prestamo y devolucion en variables string 
             string fechaHora = obtenerFechaHoraActual();
             string fechaDevolucion = obtenerFechaDevolucion(tiempo);
             cout << "El libro se entrego en la fecha: " << endl << fechaHora << endl;
@@ -86,6 +93,7 @@ void prestamoLibro(Book libros[], int cantidad, int buscarID, int& indicePrestam
     }
 }
 
+//funcion que muestra el historial 
 void mostrarHistorial( int cantidad) {
     cout << "\nHistorial de Prestamos:\n";
     for (int i = 0; i < cantidad; ++i) {
@@ -97,7 +105,7 @@ void mostrarHistorial( int cantidad) {
     }
 }
 
-
+//Funcion que devuelve el libro, en realidad eliminando el registro de prestamo
 void devolverLibro(int& cantidad, int buscarID){
 	 for(int i=0; i<cantidad; ++i){
 	 	if(buscarID == registrar_usuario[cantidad_de_usuarios-1].prestamos[i].id_prestamo){
@@ -204,7 +212,7 @@ void valida(int &entrada){
     }
 }
 
-
+// Funcion que le muestra los prestamos en curso al administrador 
 void mostrar_prestamos_activos_admin(int cantidad_usuarios, Registro_usuario usuarios[]) {
     cout << "\nPrestamos Activos:\n";
     for (int i = 0; i < cantidad_usuarios; ++i) {
