@@ -27,12 +27,12 @@ void Menu_Mostrar();
 void mostrar(int numcateg); //FUNCION QUE MUESTRA LIBROS DE UN CATEGORIA EN ESPECIFICA
 void Menu_Administrador();
 void Mostrar_usuarios_administradores(Registro_Administrador RE[], Registro_usuario REU[]);
-void Registrar_admin(Registro_Administrador REG[],int &cant_admin);
+void Registrar_admin(Registro_Administrador REG[],int &cant_admin);  
 void devolverLibro(int& cantidad, int buscarID); 
 void valida(int &entrada);
 void QuitarL();
 void Mostrar_admin(); 
-void mostrar_prestamos_activos_admin(int cantidad_usuarios, Registro_usuario usuarios[]);
+void mostrar_prestamos_activos_admin(int cantidad_usuarios, Registro_usuario usuarios[]);  // FUNCION QUE MUESTRA AL ADMINISTRADOR LOS PRESTAMOS ACTIVOS 
 void quitarlibro();
 void agregarlibro();
 void AgregarL();
