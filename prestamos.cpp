@@ -79,9 +79,10 @@ void prestamoLibro(Book libros[], int cantidad, int buscarID, int& indicePrestam
 			//Almacenando la hora de prestamo y devolucion en variables string 
             string fechaHora = obtenerFechaHoraActual();
             string fechaDevolucion = obtenerFechaDevolucion(tiempo);
+            cout << "\t\t\t\t\t--------------------------------------------- "<<endl;
             cout << "\t\t\t\t\t\t\tEl libro se entrego en la fecha: " << fechaHora << endl;
             cout << "\t\t\t\t\t\t\tSe espera que sea devuelto antes de: "<< fechaDevolucion << endl;
-
+			cout << "\t\t\t\t\t--------------------------------------------- "<<endl<<endl;
             registrarPrestamo(indicePrestamos, libros[i], tiempo, buscarID);
 
             confirmacion = true;

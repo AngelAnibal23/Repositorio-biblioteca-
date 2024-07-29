@@ -9,8 +9,8 @@ using namespace std;
 //FUNCION DE REGISTRAR USUARIOS
 void Registrar_usuario(Registro_usuario REG[], int &cant_usu) {
     Logo(); // Muestra el logotipo
-
-    cout << "\t\t\t\t\t\t\t\t-----REGISTRARSE-----" << endl;
+	int entrada;
+    cout << "\t\t\t\t\t\t\t\t-----USUARIO-----" << endl;
 
     int i = cant_usu; // Asigna a 'i' la cantidad actual de usuarios registrados
     fflush(stdin); // Limpia el buffer de entrada para evitar problemas con getline
@@ -27,27 +27,31 @@ void Registrar_usuario(Registro_usuario REG[], int &cant_usu) {
     cout << "\t\t\t\t\t\t\t\tAPELLIDO MATERNO: ";
     getline(cin, REG[i].APELLIDO_MAT);
     solicitarEntradaNoVaciaAM(REG, i);
-
+	fflush(stdin);
     cout << "\t\t\t\t\t\t\t\tSEXO(H/M): ";
     getline(cin, REG[i].SEXO);
     validar_sexo(REG, i);
 
     cout << " \t\t\t\t\t\t\t\tEDAD: ";
-    getline(cin, REG[i].EDAD);
+    valida(entrada);
+    REG[i].EDAD=entrada;
     validar_edad(REG, i);
 
     cout << "\t\t\t\t\t\t\t\tDNI: ";
-    getline(cin, REG[i].DNI);
+    valida(entrada);
+    REG[i].DNI=entrada;
     validar_dni(REG, i);
-
+	fflush(stdin);
+	
     cout << "\t\t\t\t\t\t\t\tCODIGO DE USUARIO: ";
     getline(cin, REG[i].CODIGO);
     validar_codigo(REG, i);
 
     cout << "\t\t\t\t\t\t\t\tTELEFONO: ";
-    getline(cin, REG[i].TELEFONO);
+    valida(entrada);
+    REG[i].TELEFONO=entrada;
     validar_telefono(REG, i);
-
+	fflush(stdin);
     cout << "\t\t\t\t\t\t\t\tEMAIL: ";
     getline(cin, REG[i].EMAIL);
     validar_email(REG, i);
@@ -69,8 +73,8 @@ void Registrar_usuario(Registro_usuario REG[], int &cant_usu) {
 
 void Registrar_admin(Registro_Administrador REG[], int &cant_admin) {
     Logo(); // Muestra el logotipo
-
-    cout << "\t\t\t\t\t\t\t\t-----REGISTRARSE-----" << endl;
+	int entrada;
+    cout << "\t\t\t\t\t\t\t\t-----ADMINISTRADOR-----" << endl;
 
     int i = cant_admin; // Asigna a 'i' la cantidad actual de administradores registrados
     fflush(stdin); // Limpia el buffer de entrada para evitar problemas con getline
@@ -87,27 +91,30 @@ void Registrar_admin(Registro_Administrador REG[], int &cant_admin) {
     cout << "\t\t\t\t\t\t\t\tAPELLIDO MATERNO: ";
     getline(cin, REG[i].APELLIDO_MAT);
     solicitarEntradaNoVaciaAM(REG, i);
-
+	fflush(stdin);
     cout << "\t\t\t\t\t\t\t\tSEXO(H/M): ";
     getline(cin, REG[i].SEXO);
     validar_sexo(REG, i);
 
     cout << " \t\t\t\t\t\t\t\tEDAD: ";
-    getline(cin, REG[i].EDAD);
+    valida(entrada);
+    REG[i].EDAD=entrada;
     validar_edad(REG, i);
-
+    
     cout << "\t\t\t\t\t\t\t\tTELEFONO: ";
-    getline(cin, REG[i].TELEFONO);
+    valida(entrada);
+    REG[i].TELEFONO=entrada;
     validar_telefono(REG, i);
-
+	fflush(stdin);
     cout << "\t\t\t\t\t\t\t\tEMAIL: ";
     getline(cin, REG[i].EMAIL);
     validar_email(REG, i);
 
     cout << "\t\t\t\t\t\t\t\tDNI: ";
-    getline(cin, REG[i].DNI);
+    valida(entrada);
+    REG[i].DNI=entrada;
     validar_dni(REG, i);
-
+    
     poner_mayuscula(REG, i); // Convierte los datos a mayusculas para uniformidad
 
     
