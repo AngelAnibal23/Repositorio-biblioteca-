@@ -66,12 +66,12 @@ struct Registro_usuario{
 	string NOMBRE;
 	string APELLIDO_PAT;
 	string APELLIDO_MAT;
-	string DNI;
+	int DNI;
 	string CODIGO;
-	string EDAD;
+	int EDAD;
 	string EMAIL;
 	string SEXO;
-	string TELEFONO;
+	int TELEFONO;
 	Prestamo prestamos[50];
 };
 
@@ -80,12 +80,12 @@ struct Registro_Administrador{
 	string NOMBRE;
 	string APELLIDO_PAT;
 	string APELLIDO_MAT;
-	string DNI;
+	int DNI;
 	string CODIGO;
-	string EDAD;
+	int EDAD;
 	string EMAIL;
 	string SEXO;
-	string TELEFONO;
+	int TELEFONO;
 
 };
 
